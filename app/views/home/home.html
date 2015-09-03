@@ -1,0 +1,23 @@
+{{=[[ ]]=}}
+
+<!-- Hot Jar -->
+<!--<script>-->
+    <!--(function(f,b){-->
+        <!--var c;-->
+        <!--f.hj=f.hj||function(){(f.hj.q=f.hj.q||[]).push(arguments)};-->
+        <!--f._hjSettings={hjid:20972, hjsv:3};-->
+        <!--c=b.createElement("script");c.async=1;-->
+        <!--c.src="//static.hotjar.com/c/hotjar-20972.js?sv=3";-->
+        <!--b.getElementsByTagName("head")[0].appendChild(c);-->
+    <!--})(window,document);-->
+<!--</script>-->
+
+<section id="home" class="v-margin-only-top-28" ng-class="{ 'no-margin' : totalNumberOfMessagesOnDisplay > 0 }"  analytics-breadcrumb="home" analytics-typepage="home" >
+
+    [[> homeThumbs.inc ]]
+
+	<div class="greyHr" ng-show="HomeFaq.isVisible" ></div>
+
+    [[> homeFaq.inc ]]
+
+</section>

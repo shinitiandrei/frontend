@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly>
+	<id>package</id>
+	<formats>
+		<format>tar.gz</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<fileSets>
+		<fileSet>
+			<includes>
+				<include>*.*</include>
+				<include>**/*.*</include>
+			</includes>
+			<excludes>
+				<exclude>readme.txt</exclude>
+				<exclude>assembly-bin.xml</exclude>
+				<exclude>pom.xml</exclude>
+				<exclude>setup.json</exclude>
+				<exclude>config.json</exclude>
+				<exclude>setupbol.json</exclude>
+				<exclude>setupzip.json</exclude>
+				<exclude>setupfolha.json</exclude>
+				<exclude>.classpath</exclude>
+				<exclude>.project</exclude>				
+				<exclude>**/node_modules/**</exclude>
+				<exclude>**/install/**</exclude>
+				<exclude>**/test/**</exclude>
+				<exclude>**/Gruntfile.js</exclude>
+				<exclude>**/package.json</exclude>
+				<exclude>**/target/**</exclude>
+				<exclude>**/.jshintrc</exclude>
+				<exclude>**/*.lnk</exclude>
+				<exclude>**/buildNumber.properties</exclude>
+                <exclude>%regex[.*\.([gG][iI][fF]|[jJ][pP][gG]|[jJ][pP][eE][gG]|[pP][nN][gG]|[iI][cC][oO]|[sS][wW][fF]|[hH][tT][cC])]</exclude>
+			</excludes>
+			<outputDirectory>${skin.home}</outputDirectory>
+			<lineEnding>unix</lineEnding>
+			<fileMode>0744</fileMode>
+		</fileSet>
+
+		<fileSet>
+            <includes>
+                <include>%regex[.*\.([gG][iI][fF]|[jJ][pP][gG]|[jJ][pP][eE][gG]|[pP][nN][gG]|[iI][cC][oO]|[sS][wW][fF]|[hH][tT][cC])]</include>
+            </includes>
+            <outputDirectory>${skin.home}</outputDirectory>
+            <lineEnding>keep</lineEnding>
+            <fileMode>0744</fileMode>
+        </fileSet>
+
+	</fileSets>
+</assembly>

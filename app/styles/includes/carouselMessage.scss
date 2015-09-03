@@ -1,0 +1,16 @@
+section#MessagesCarousel{
+
+    max-width: $innerWidth;
+    margin: 15px auto 0;
+    padding: 0px 10px ;
+
+    .carousel .alert {
+        margin: 0px auto;
+        text-align: left;
+    }
+
+    .carousel-indicators {
+        bottom: 0;
+    }
+
+}

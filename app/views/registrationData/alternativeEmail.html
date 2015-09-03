@@ -1,0 +1,62 @@
+{{=[[ ]]=}}
+<section ng-controller="alternativeEmailCtrl">
+	<!-- Contact Information Alternative Email Info -->
+	<section id="contactInformationAlternativeEmailInfo" ng-class="{inactive: $parent.hide == 'contactInformationAlternativeEmailInfo'}">
+		<div class="container">
+			<div class="form-group v-margin-10">
+				<div class="row">
+					<div class="col-xs-24 col-sm-6 col-md-6 col-lg-6">E-mail alternativo</div>
+
+					<div class="col-xs-24 col-sm-18 col-md-18 col-lg-18" ng-show="$parent.preloader">
+                        <div class="alert alert-sm alert-loader alert-loader-box"></div>
+                    </div>
+
+					<div class="col-xs-24 col-sm-18 col-md-18 col-lg-18" ng-show="!$parent.preloader">
+						<div ng-show="registered">
+							<strong>{{alternativeEmailLabel}}</strong> - <a href="" ng-click="$parent.show = 'contactInformationAlternativeEmailEdit' ; $parent.hide='contactInformationAlternativeEmailInfo'">editar</a>
+							<div ng-show="alternativeEmailStatus == 'ACTIVE'" class="alert alert-sm alert-success fadeOutSac">
+	                            <p>Confirmado</p>
+	                        </div>
+	                        <div ng-show="alternativeEmailStatus == 'NOT_CONFIRMED'" class="alert alert-sm alert-warning fadeOutSac">
+	                            <p>N&atilde;o confirmado - <a href="" ng-click="alternativeEmail.change()">reenviar email</a></p>
+	                        </div>
+	                        <div ng-show="alternativeEmailStatus == 'PENDING'" class="alert alert-sm alert-warning fadeOutSac">
+	                        	<p>Aguardando confirma&ccedil;&atilde;o</p>
+	                        </div>
+						</div>
+						<a ng-hide="registered" href="" ng-click="$parent.show = 'contactInformationAlternativeEmailEdit' ; $parent.hide='contactInformationAlternativeEmailInfo'">Cadastrar e-mail alternativo</a>
+					</div>
+				</div>
+			</div>
+			<hr>
+		</div>
+	</section>
+
+	<!-- Contact Information Email Edit -->
+	<section id="contactInformationAlternativeEmailEdit" ng-class="{active: $parent.show == 'contactInformationAlternativeEmailEdit'}" class="inactive">
+		<div class="container">
+			<div class="form-group">
+                <div class="bgRecoveryBox">
+                	<h5 class="col-xs-24 col-sm-24 col-md-24 col-lg-24">E-mail alternativo</h5>
+                	<form ng-submit="alternativeEmail.change()">
+                		<div class="row">
+                			<div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+                				<p>Caso voc&ecirc; esque&ccedil;a sua senha, usaremos o e-mail alternativo como auxilo para recuperar o acesso.</p>
+                				<div sac-input helpblockclass="'col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right'" inputclass="'col-xs-24 col-sm-12 col-md-12 col-lg-12 no-padding-left no-padding-right'" type="'text'" name="'alternativeEmail'" field="alternativeEmail" placeholder="'E-mail alternativo'"></div>
+                			</div>
+                		</div>
+                		<div class="row">
+                        	<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 h-padding-only-right-5">
+                            	<button class="btn btn-block btn-primary ">Salvar</button>
+                        	</div>
+                        	<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 h-padding-only-left-5">
+                            	<button class="btn btn-block btn-default" type="button" ng-click="$parent.show = 'contactInformationAlternativeEmailInfo' ; $parent.hide='contactInformationAlternativeEmailEdit'">Cancelar</button>
+                        	</div>
+                        </div>
+                	</form>
+                </div>
+            </div>
+            <hr>
+		</div>
+	</section>
+</section>

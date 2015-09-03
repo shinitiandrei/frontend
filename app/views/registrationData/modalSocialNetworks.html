@@ -1,0 +1,31 @@
+{{=[[ ]]=}}
+<!--Modal Social Networks-->
+<script type="text/ng-template" id="socialNetworksModal">
+    <div class="modal-body no-padding">
+    	<button type="button" class="close h-margin-5" ng-click="unlinkModal.cancel()">&times;</button>
+    	<div ng-hide='showStatus'>
+        	<div class="h-padding-20 v-padding-only-top-20">
+        		<strong>Tem certeza que deseja desvincular essa rede social?</strong>
+				<br>
+				<span>Voc&ecirc; usa essa rede social como seu meio de acesso para alguns produtos UOL.</span>
+        	</div>
+        	<div class="row v-padding-20">
+	        	<div class="text-center col-xs-24 col-sm-24 col-md-24 col-lg-24">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <button class="btn btn-primary" ng-click="unlinkModal.confirmation()">Desvincular</button>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+                        <button class="btn btn-default" ng-click="unlinkModal.cancel()">Cancelar</button>
+                    </div>
+	        	</div>
+        	</div>
+    	</div>
+    	<div ng-show="showStatus">
+    		<div class="v-padding-20">
+    			<div class="text-center">
+    				<strong class="alert alert-sm alert-success">A rede social foi desvinculada</strong>
+    			</div>
+    		</div>
+		</div>
+    </div>
+</script>

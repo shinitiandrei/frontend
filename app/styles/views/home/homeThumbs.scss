@@ -1,0 +1,166 @@
+section#homeThumbs{
+
+    margin-bottom: 26px;
+
+    @media not all, (max-width: $col-md) {
+        margin-top:0px;
+        padding-top: 0px !important;
+    }
+
+    .row{
+
+        .homeThumb{
+
+            cursor: pointer;
+            margin-bottom: 10px;
+
+            @media not all, (min-width: $col-sm) and (max-width: $col-lg) {
+                margin-bottom: 20px;
+            }
+
+            .homeThumbFakeBorder{
+
+                padding: 1px;
+                border: 1px solid #dddddd;
+                border-radius: 2px;
+
+                .thumbnail{
+
+                    background: url("../images/bgThumb.gif") no-repeat scroll 68px -200px #FFF;
+                    border-radius: 2px;
+                    padding: 10px 3px;
+                    margin: 2px 2px;
+                    min-height: 270px;
+
+                    &.small{
+
+                        height:100px;
+                        min-height: $notifyMinHeight;
+
+                        .homeThumbTextContainer, .homeThumbImage{
+                            position: absolute;
+                            top: 50%;
+                            @include translateY(-50%);
+                        }
+
+                        .homeThumbImage{
+                            width: 77px;
+                        }
+
+                        .homeThumbTextContainer{
+
+                            left: 77px;
+                            padding-left: 27px;
+
+                            @media not all, ( min-width:$col-xs ){
+                                padding-right: 40px;
+                            }
+
+                        }
+
+
+                    }
+
+                    &.medium {
+
+                        min-height: 160px;
+                        height:160px;
+
+                        .homeThumbTextContainer, .homeThumbImage{
+                            position: absolute;
+                            top: 50%;
+                            @include translateY(-50%);
+                        }
+
+                        .homeThumbTextContainer{
+                            left: 166px;
+                            padding-left:0px;
+                            max-width: 200px;
+                        }
+
+                        .homeThumbImage{
+                            width: 150px;
+                            margin: 0 auto;
+                        }
+
+                        .homeThumbTitle {
+                            padding-left: 0px;
+                        }
+
+                        .homeThumbInfo{
+                            padding-left: 0px;
+                        }
+
+                    }
+
+                    &.large{
+
+                        height: 270px;
+                        background-position: -139px -226px;
+
+                        .homeThumbTextContainer{
+
+                            position: absolute;
+                            top: 50%;
+                            left: 38px;
+                            @include translateY(-50%);
+
+                            .homeThumbImage{
+                                max-width: 120px;
+                                width: 140px;
+                                margin: 0 auto;
+                            }
+
+                            .homeThumbTitle {
+                                text-align: center;
+                                font-size: 1.2em;
+                                margin: 0 auto 10px;
+                                width: 100px;
+                            }
+
+                            .homeThumbInfo{
+                                text-align: center;
+                                margin: 5px auto 0px;
+                                font-size: 0.9em;
+                                width: 170px;
+                            }
+
+                        }
+
+
+
+                    }
+
+                    &:hover, &:focus, &.active {
+
+                        border: 1px solid #F7C621;
+                        background-position: 0px -500px;
+
+                        @media not all, (min-width: $col-md) {
+                            border: 1px solid #F7C621;
+                        }
+
+                    }
+
+                    .homeThumbTitle {
+                        font-size: 1.35em;
+                        color: #000;
+                    }
+
+                    .homeThumbImage{
+                        img {
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+
+                    .homeThumbInfo{
+                        font-size: 0.98em;
+                    }
+
+                }
+            }
+        }
+
+    }
+}

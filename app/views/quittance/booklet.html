@@ -1,0 +1,26 @@
+{{=[[ ]]=}}
+<section id="booklet" ng-class="{ 'no-margin-top v-margin-only-bottom-30' : Notify.getAllNotifies().length > 0, 'v-margin' : Notify.getAllNotifies().length == 0 }">
+    <div class="container">
+        <div class="form-group">
+        	<h4>Boleto banc&aacute;rio</h4>
+            <span class="col-xs-24 col-sm-24 col-md-24 col-lg-24">Confira abaixo as instru&ccedil;&otilde;es para pagamento</span>
+            <div class="row">
+                <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24 v-margin-10">
+                    <div class="alert alert-sm alert-info">
+                        <strong>Enviamos uma c&oacute;pia do boleto para {{yourEmail}}</strong>
+                        <br>
+                        <p>O seu pagamento s&oacute; ser&aacute; processado ap&oacute;s a confirma&ccedil;&atilde;o do banco. Este processo pode levar at&eacute; 3 dias &uacute;teis.</p>
+                        <br><br>
+                        <p><a id="bookletLink" ng-href="{{url}}" target="_blank">Clique aqui</a>&nbsp;para visualizar o boleto.</p>
+                        <!--<p><a id="bookletLink" href="#" ng-href="http://www.google.com.br" target="_blank">Clique aqui</a>&nbsp;para visualizar o boleto.</p>-->
+                    </div>
+                </div>
+            </div>
+            <div class="row visible-xs">
+                <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24 v-margin-10">
+                    <a href="https://sac.uol.com.br/#/wrapper?url=https:%2F%2Fsac.uol.com.br%2Fconta%2Fquitacao.html"> &lt; voltar para meus produtos e serviços</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

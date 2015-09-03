@@ -1,0 +1,42 @@
+{{=[[ ]]=}}
+<section id="verifySmsToken" ng-class="{ 'no-margin-top v-margin-only-bottom-30' : Notify.getAllNotifies().length > 0, 'v-margin' : Notify.getAllNotifies().length == 0 }"  >
+    <div class="container no-padding">
+        <div class="form-group">
+
+            <h4>Utilize o seu celular para recuperar a senha</h4>
+
+            <form ng-submit="sms.checkAndSubmitToken()">
+
+                <div class="row">
+                    <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+                        <div sac-input validator="'TokenValidator'" type="'text'" name="'token'" control-label="'Digite o código recebido por SMS:'"  field="token" maxlength="6"  inputclass="'col-xs-24 col-sm-9 col-md-9 col-lg-9 no-padding-left no-padding-right'"  ></div>
+                    </div>
+                </div>
+
+                <div id="sac-turing-container" class="fadeSac" ></div>
+
+                <div class="row">
+                    <div class="col-xs-24 col-sm-6 col-md-5 col-lg-5">
+                        <div class="form-group">
+                            <button type="submit" click-once click-once-validate="validate" id="submitVerifySmsToken" class="btn btn-primary row">Confirmar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row v-margin-15" >
+                    <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+                        <strong>Ainda não recebeu seu código?</strong><br/>
+                        O SMS pode levar alguns minutos para chegar ao seu celular
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+                        <a href="" ng-click="sms.sendTokenAgain()">Enviar um novo código SMS</a>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</section>

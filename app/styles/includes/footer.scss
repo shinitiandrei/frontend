@@ -1,0 +1,74 @@
+        div#footer{
+
+            color: #777;
+            text-align: center;
+            margin: 0 auto;
+            padding: 0px 0px 10px 0px;
+            min-width: $col-xs;
+            width: 100%;
+
+            @import 'menuFooter';
+
+            .container {
+
+                max-width: $innerWidth;
+                margin: 0 auto;
+
+                #footerDisclaimer{
+
+                    color: #333333;
+                    font-size: 0.9em;
+
+                    @media not all, (max-width: $col-xs) {
+                        font-size: 0.7em;
+                    }
+
+                }
+
+                .greyHrFooterDisclaimer{
+                    max-width: $innerWidth;
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+
+                #fullCopyright{
+
+                    color: #939393;
+                    font-size: 0.8em;
+
+                    @media not all, (max-width: $col-xs) {
+                        font-size: 0.7em;
+                    }
+
+                    p {
+                        margin : 0;
+                    }
+
+                }
+
+
+
+            }
+
+            .panel-group {
+                margin-bottom: 0px;
+            }
+
+            hr{
+
+                color: $hrGrey;
+
+                &.greyHrFooterLinks{
+
+                    padding-left: 0;
+                    padding-right: 0;
+                    margin-top: 0px;
+
+                    @media not all, (max-width: $col-sm) {
+                        display: none;
+                    }
+
+                }
+            }
+
+        }

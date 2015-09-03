@@ -1,0 +1,173 @@
+.spacer {
+    margin: 6px;
+    float: left;
+}
+
+.v-spacer {
+    margin: 6px 0;
+    float: left;
+}
+
+
+@mixin no-padding($side) {
+    @if $side == 'all' {
+        .no-padding {
+            padding: 0 !important;
+        }
+    } @else {
+        .no-padding-#{$side} {
+            padding-#{$side}: 0 !important;
+        }
+    }
+}
+
+@include no-padding("left");
+@include no-padding("right");
+@include no-padding("top");
+@include no-padding("bottom");
+@include no-padding("all");
+
+@mixin v-padding($size) {
+    @if $size == 30 {
+        .v-padding {
+            padding-bottom: #{$size}px !important;
+            padding-top: #{$size}px !important;
+        }
+    } @else {
+        .v-padding-#{$size} {
+            padding-bottom: #{$size}px !important;
+            padding-top: #{$size}px !important;
+        }
+    }
+
+    .v-padding-only-top-#{$size} {
+        padding-top: #{$size}px !important;
+    }
+
+    .v-padding-only-bottom-#{$size} {
+        padding-bottom: #{$size}px !important;
+    }
+}
+
+@include v-padding(5);
+@include v-padding(10);
+@include v-padding(20);
+@include v-padding(30);
+
+@mixin h-padding($size) {
+    @if $size == 30 {
+        .h-padding {
+            padding-right: #{$size}px !important;
+            padding-left: #{$size}px !important;
+        }
+    } @else {
+        .h-padding-#{$size} {
+            padding-right: #{$size}px !important;
+            padding-left: #{$size}px !important;
+        }
+    }
+
+    .h-padding-only-right-#{$size} {
+        padding-right: #{$size}px !important;
+    }
+
+    .h-padding-only-left-#{$size} {
+        padding-left: #{$size}px !important;
+    }
+}
+
+@include h-padding(5);
+@include h-padding(10);
+@include h-padding(20);
+@include h-padding(30);
+
+@mixin no-margin($side) {
+    @if $side == 'all' {
+        .no-margin {
+            margin: 0px 0px!important;
+        }
+    } @else {
+        .no-margin-#{$side} {
+            margin-#{$side}: 0px !important;
+        }
+    }
+}
+
+@include no-margin("left");
+@include no-margin("right");
+@include no-margin("top");
+@include no-margin("bottom");
+@include no-margin("all");
+
+
+
+@mixin v-margin($size) {
+    @if $size == 30 {
+        .v-margin {
+            margin-bottom: #{$size}px !important;
+            margin-top: #{$size}px !important;
+        }
+    } @else {
+        .v-margin-#{$size} {
+            margin-bottom: #{$size}px !important;
+            margin-top: #{$size}px !important;
+        }
+    }
+
+    .v-margin-only-top-#{$size} {
+        margin-top: #{$size}px !important;
+    }
+
+    .v-margin-only-bottom-#{$size} {
+        margin-bottom: #{$size}px !important;
+    }
+}
+
+@include v-margin(5);
+@include v-margin(10);
+@include v-margin(15);
+@include v-margin(20);
+@include v-margin(28);
+@include v-margin(30);
+
+@mixin h-margin($size) {
+    @if $size == 30 {
+        .h-margin {
+            margin-right: #{$size}px !important;
+            margin-left: #{$size}px !important;
+        }
+    } @else {
+        .h-margin-#{$size} {
+            margin-right: #{$size}px !important;
+            margin-left: #{$size}px !important;
+        }
+    }
+
+    .h-margin-only-right-#{$size} {
+        margin-right: #{$size}px !important;
+    }
+
+    .h-margin-only-left-#{$size} {
+        margin-left: #{$size}px !important;
+    }
+}
+
+@include h-margin(5);
+@include h-margin(10);
+@include h-margin(20);
+@include h-margin(30);
+
+
+@mixin translateY ($y) {
+    -o-transform: translateY($y);
+    -ms-transform: translateY($y);
+    -moz-transform: translateY($y);
+    -webkit-transform: translateY($y);
+    transform: translateY($y);
+}
+
+
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+}

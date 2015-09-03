@@ -1,0 +1,50 @@
+{{=[[ ]]=}}
+<section ng-controller="genderCtrl">
+    <!-- Personal Information Gender Info -->
+    <section id="personalInformationGenderInfo" ng-class="{inactive: $parent.hide == 'personalInformationGenderInfo'}">
+        <div class="container">
+            <div class="form-group v-margin-10">
+                <div class="row">
+                    <div class="col-xs-24 col-sm-6 col-md-6 col-lg-6">Sexo</div>
+                    <div class="col-xs-24 col-sm-18 col-md-18 col-lg-18">
+                        <strong>{{genderLabel}}</strong> - <a href="" ng-click="$parent.show = 'personalInformationGenderEdit' ; $parent.hide='personalInformationGenderInfo'">editar</a>
+                        <div class="alert alert-sm alert-success fadeOutSac" ng-show="showStatus">
+                            <p>Atualizado</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
+
+    <!-- Personal Information Gender Edit -->
+    <section id="personalInformationGenderEdit" ng-class="{active: $parent.show == 'personalInformationGenderEdit'}" class="inactive">
+        <div class="container">
+            <div class="form-group">
+                <div class="bgRecoveryBox">
+                    <div class="row">
+                        <h5 class="col-xs-24 col-sm-24 col-md-24 col-lg-24">Sexo</h5>
+                        <form ng-submit="gender.edit()">
+                            <div class="row">
+                                <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+                                    <div sac-radio helpblockclass="'col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right'" inputclass="'col-xs-24 col-sm-24 col-md-24 col-lg-3 no-padding-left no-padding-right'" name="'gender'" field="gender" optionlist="radioList"></div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 h-padding-only-right-5">
+                                    <button class="btn btn-block btn-primary">Salvar</button>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 h-padding-only-left-5">
+                                    <button class="btn btn-block btn-default" type="button" ng-click="$parent.show = 'personalInformationGenderInfo' ; $parent.hide='personalInformationGenderEdit'">Cancelar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
+</section>

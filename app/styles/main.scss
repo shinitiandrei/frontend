@@ -1,0 +1,121 @@
+@charset "ISO-8859-1";
+
+@import 'libs/measures';
+@import 'libs/utils';
+@import 'libs/colors';
+@import 'libs/turing';
+@import 'libs/uis_sac';
+@import 'libs/bootstrapCustomAlerts';
+@import 'libs/common';
+
+html {
+
+    height: 100%;
+    background: none repeat scroll 0% 0% #E5E9EC;
+    overflow-y: scroll;
+
+    body {
+
+        padding: 0 2px ;
+        max-width: $maxWidth;
+        margin: 0px auto;
+        min-height: 100%;
+        box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.2);
+
+        @media not all, (min-width: 0px) and (max-width:$col-sm - 1) {
+            padding: 0px 0px;
+        }
+
+        @import 'libs/loadingBar';
+        @import 'libs/loaderCurtain';
+        @import 'includes/colorHr';
+        @import 'includes/greyHr';
+        @import 'includes/notify';
+        @import 'includes/header';
+
+        div#wrapper {
+
+            max-width: $maxWidth - 4;
+            min-width: $col-xs;
+            padding: 0 0;
+
+            @import 'includes/carouselAd';
+            @import 'includes/carouselMessage';
+
+            div#containerViewWrapper {
+
+                min-height: 35%;
+
+                div#containerView {
+
+                    min-height: 35%;
+                    max-width: $maxWidth;
+                    margin: 0 auto;
+
+                    h4, h5 {
+                        margin: 0px auto 20px;
+                        font-weight: 500;
+                        width: 100%;
+                        padding-left: 10px;
+                        padding-right: 10px;
+                    }
+
+                    .container {
+
+                        max-width: $innerWidth;
+                        width: 100%;
+
+                        div.form-group {
+                            margin-top: 0px;
+                        }
+
+                    }
+
+                    .row {
+
+                        max-width: $innerWidth;
+                        width: 100%;
+                        margin: 0 auto;
+
+                        div.form-group {
+                            margin-top: 0px;
+                        }
+
+                    }
+
+                    /** Aqui vão todas as Formatações necessárias para as Views carregadas pelo Route Provider */
+                    section {
+
+                        @import 'views/login/login';
+
+                        @import 'views/home/home';
+
+                        @import 'views/contactCenter/contactCenter';
+
+                        @import 'views/passwordAndSecurity/passwordAndSecurity';
+
+                        @import 'views/directives/strongPassword';
+
+                        @import 'views/registrationData/registrationData';
+
+                        @import 'views/quittance/quittance';
+
+                        @import 'views/updatePaymentMethod/updatePaymentMethod';
+
+                    }
+
+                    @import 'views/directives/sacInputCreditCard.scss';
+
+                }
+
+            }
+
+        }
+
+        @import 'includes/footer';
+
+    }
+
+}
+
+@import 'libs/uol_animations';

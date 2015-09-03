@@ -1,0 +1,232 @@
+{
+    "id": "sac-metatemplate",
+    "name": "SAC 2.0",
+    "extensions": "*",
+    "parsableRegex": "",
+    "notParsableRegex": "(.*)(\\\\|\\/)images(\\\\|\\/)(.*)|(.*)(\\\\|\\/)fonts(\\\\|\\/)(.*)|(.*)(\\\\|\\/)bower_components(\\\\|\\/)(.*)|(.*)(\\\\|\\/)scripts(\\\\|\\/)(.*)|(.*).ico|(.*).png",
+    "tabs": {
+
+        "pom": {
+            "name": "POM",
+
+            "artifactId": {
+                "name": "Nome do ArtifactId",
+                "tip": "O prefixo sac-template- ser&aacute; adicionado.",
+                "type": "text",
+                "value": "uol"
+            },
+
+            "version": {
+                "name": "Version do Artifact",
+                "tip": "Version do Artifact da skin.",
+                "type": "text",
+                "value": "1.0.0"
+            }
+        },
+
+        "skin": {
+
+            "name": "Produto / Skin",
+
+            "skinUrlParam": {
+                "name": "Skin equivalente no Acesso",
+                "tip":  "Skin equivalente no Acesso",
+                "type": "text",
+                "value": "sac"
+            },
+
+            "homeUrl": {
+                "name": "URL da home da Skin",
+                "tip": "URL da home da Skin",
+                "type": "text",
+                "value": "/#/"
+            },
+
+            "logoImg": {
+                "name": "Logo",
+                "tip": "URL da imagem do Logo",
+                "type": "text",
+                "value": "https://imguol.com/p/sac/uol/images/5af59b06.logoUOL.png"
+            },
+
+            "brandColor": {
+                "name": "Cor que representa o produto",
+                "tip": "Cor que representa o produto",
+                "type": "text",
+                "value": "#f9c523"
+            },
+
+            "brandName": {
+                "name": "Nome do produto",
+                "tip": "Nome do produto pelas páginas da Aplicação",
+                "type": "text",
+                "value": "UOL"
+            }
+
+        },
+
+        "head": {
+
+            "name": "Head Meta Tags",
+
+            "title": {
+                "name": "T&iacute;tulo da pagina",
+                "tip": "Título do Navegador",
+                "type": "text",
+                "value": "UOL SAC: atendimento online, tira-dúvidas sobre serviços e ajuda sobre produtos"
+            },
+
+            "metatagDescription": {
+                "name": "Meta Tag Description",
+                "tip": "Meta-tag description - SEO",
+                "type": "text",
+                "value": "UOL SAC: utilize o SAC do UOL para tirar suas dúvidas, recuperar sua senha, quitar seus débitos e ver informações de cobrança, de seus produtos e serviços. Veja mais!"
+            },
+
+            "metatagVerification": {
+                "name": "Meta Tag Verification",
+                "tip": "Meta-tag Verification - SEO",
+                "type": "text",
+                "value": "uPoEEmwsmGUXmhtQSbPK1DFcI9TNUZB19rqvpshC4vw"
+            },
+
+            "ogImage": {
+                "name": "Open Graph Image",
+                "tip": "Open Graph tag Image - SOCIAL SEO",
+                "type": "text",
+                "value": "https://imguol.com/p/sac/uol/images/uol-sac-logo-fb.png"
+            },
+
+            "ogSiteName": {
+                "name": "Open Graph Site Name",
+                "tip": "Open Graph Site Name",
+                "type": "text",
+                "value": "UOL SAC"
+            }
+
+        },
+
+        "bar": {
+
+            "name": "Barra",
+
+            "useUOL": {
+                "name": "Barra UOL",
+                "tip": "Barra do Topo da pagina",
+                "type": "checkbox",
+                "value": true
+            },
+
+            "useBOL": {
+                "name": "Barra BOL",
+                "tip": "Barra do Topo da pagina",
+                "type": "checkbox",
+                "value": false
+            }
+        },
+
+        "redirects" :{
+
+            "name": "URLs de redirecionamento",
+
+            "recoveryPasswordSuccessURL": {
+                "name": "URL para sucesso da recupera&ccedil;&atilde;o de senha",
+                "tip": "url",
+                "type": "text",
+                "value": "/recuperarsenha/senhaalterada"
+            },
+
+            "quittanceAccountsUrl": {
+                "name": "URL de redirecionamento para as contas do usu&aacute;rio",
+                "tip": "url",
+                "type": "text",
+                "value": "https://sac.uol.com.br/conta/quitacao.html"
+            }
+
+        },
+
+        "resources": {
+
+            "name": "Arquivos Est&aacute;ticos",
+
+            "jsHead": {
+                "name": "Arquivos Javascript, chamados na tag Head da p&aacute;gina",
+                "tip": "Arquivos CSS utilizados nos fluxos de SAC.",
+                "type": "array",
+                "values": []
+            },
+
+            "jsFooter": {
+                "name": "Arquivos Javascript",
+                "tip": "Arquivos JS utilizados nos fluxos de SAC, chamados no fim da p&aacute;gina.",
+                "type": "array",
+                "values": [ "https://jsuol.com.br/g/uol/components/footer.js" ]
+            },
+
+            "metrics": {
+                "name": "JavaScript Omniture",
+                "tip": "JavaScript Omniture",
+                "type": "array",
+                "values": [ "https://simg.uol.com.br/nocache/omtr/sac.js" ]
+            },
+
+            "css": {
+                "name": "Arquivos de Estilo CSS",
+                "tip": "Arquivos de Estilo CSS",
+                "type": "array",
+                "values": ["https://jsuol.com.br/bk/sac/uol/style.css?v=9.99"]
+            },
+
+            "fixturesDir": {
+                "name": "Diret&oacute;rio do Fixture",
+                "tip": "Diret&oacute;rio que contém todos os fixtures",
+                "type": "text",
+                "value": "https://jsuol.com.br/bk/sac/uol/"
+            },
+
+
+            "faviconDir": {
+                "name": "Diret&oacute;rio dos Favicons",
+                "tip": "Diret&oacute;rio que contém todos os fixtures",
+                "type": "text",
+                "value": "https://stc.uol.com/c/sac/uol/"
+            }
+
+        },
+
+        "advanced" : {
+
+            "name": "Avan&ccedil;ado",
+
+            "timeOut": {
+                "name": "TimeOut",
+                "tip": "Tempo limite para as requisi&ccedil;&otilde;es ao end-point.",
+                "type": "text",
+                "value": "100000"
+            },
+
+            "srcString": {
+                "name": "srcString",
+                "tip": "srcString",
+                "type": "text",
+                "value": "src="
+            },
+
+            "hrefString": {
+                "name": "srcString",
+                "tip": "srcString",
+                "type": "text",
+                "value": "href="
+            },
+
+            "mobileResponsiveness": {
+                "name": "Seta a Skin como responsiva ou n&atilde;o.",
+                "tip": "Seta o tamanho de 1190 para a viewport, que s&oacute; afeta mobile",
+                "type": "checkbox",
+                "value": true
+            }
+
+        }
+
+    }
+}

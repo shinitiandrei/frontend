@@ -1,0 +1,18 @@
+div#notify{
+
+    max-width: $innerWidth;
+    margin: 0 auto;
+    padding: 0px 10px ;
+
+    &.messagesCarouselOnDisplay{
+        margin:20px auto;
+    }
+
+}
+
+div.notify {
+    p {
+        margin-bottom: 0px;
+    }
+}
+

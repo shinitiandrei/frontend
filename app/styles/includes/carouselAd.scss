@@ -1,0 +1,18 @@
+section#AdCarousel{
+
+    .carousel {
+
+        div.bannerContainer {
+            max-width: $maxWidth;
+            height: 230px;
+            cursor: pointer;
+        }
+
+        a {
+            &:active, &:focus {
+                outline: 0;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,28 @@
+.fadeSac {
+
+    opacity: 1;
+
+	&.ng-enter, .ng-leave {
+	    -webkit-transition: all 1s ease;
+	    -moz-transition: all 1s ease;
+	    -o-transition: all 1s ease;
+	    transition: all 1s ease;
+	}
+
+	&.ng-enter {
+	    opacity: 0;
+	}
+
+	&.ng-enter-active {
+	    opacity: 1;
+	}
+
+	&.ng-leave {
+	    opacity: 1;
+	}
+
+	&.ng-leave-active {
+	    opacity: 0;
+	}
+
+}

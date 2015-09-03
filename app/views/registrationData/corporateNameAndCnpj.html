@@ -1,0 +1,67 @@
+{{=[[ ]]=}}
+<section ng-controller="corporateNameAndCnpjCtrl">
+    <!-- Juridical Information Corporate Name And CNPJ Info -->
+    <section id="juridicalInformationCorporateNameAndCnpjInfo" ng-class="{inactive: $parent.hide == 'juridicalInformationCorporateNameAndCnpjInfo'}">
+        <div class="container">
+            <div class="form-group v-margin-10">
+                <div class="row">
+                    <div class="col-xs-24 col-sm-6 col-md-6 col-lg-6">Raz&atilde;o Social</div>
+                    <div class="col-xs-24 col-sm-18 col-md-18 col-lg-18">
+                        <strong>{{corporateNameLabel}}</strong>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="form-group v-margin-10">
+                <div class="row">
+                    <div class="col-xs-24 col-sm-6 col-md-6 col-lg-6">CNPJ</div>
+                    <div class="col-xs-24 col-sm-18 col-md-18 col-lg-18">
+                        <div ng-show="registered">
+                            <strong>{{cnpjLabel}}</strong>
+                            <div class="alert alert-sm alert-success fadeOutSac" ng-show="showStatus">
+                                <p>CNPJ cadastrado</p>
+                            </div>
+                        </div>
+                        <a ng-hide="registered" href="" ng-click="$parent.show = 'juridicalInformationCorporateNameAndCnpjRegister' ; $parent.hide='juridicalInformationCorporateNameAndCnpjInfo'">Cadastrar CNPJ</a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
+
+    <!-- Juridical Information Corporate Name And CNPJ Register  -->
+    <section id="juridicalInformationCorporateNameAndCnpjRegister" ng-class="{active: $parent.show == 'juridicalInformationCorporateNameAndCnpjRegister'}" class="inactive">
+        <div class="container">
+            <div class="form-group">
+                <div class="bgRecoveryBox">
+                    <h5 class="col-xs-24 col-sm-24 col-md-24 col-lg-24">CNPJ</h5>
+                    <form ng-submit="cnpj.edit()">
+                        <p class="col-xs-24 col-sm-24 col-md-24 col-lg-24">Ao cadastrar um cnpj verifique se a raz&atilde;o social corresponde ao que est&aacute; escrito no seu documento.</p>
+                        <div class="row">
+                            <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+                                <label>Raz&atilde;o social</label>
+                                <div sac-input helpblockclass="'col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right'" inputclass="'col-xs-24 col-sm-10 col-md-10 col-lg-10 no-padding-left no-padding-right'" type="'text'" name="'corporateName'" field="corporateName" placeholder="'Razão social'"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+                                <label>CNPJ</label>
+                                <div sac-input mask="'?9?9.?9?9?9.?9?9?9/?9?9?9?9-?9?9'" helpblockclass="'col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right'" inputclass="'col-xs-24 col-sm-5 col-md-5 col-lg-5 no-padding-left no-padding-right'" type="'text'" name="'cnpj'" field="cnpj" placeholder="'__.___.___/____-__'"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 h-padding-only-right-5">
+                                <button class="btn btn-block btn-primary">Salvar</button>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 h-padding-only-left-5">
+                                <button class="btn btn-block btn-default" type="button" ng-click="$parent.show = 'juridicalInformationCorporateNameAndCnpjInfo' ; $parent.hide='juridicalInformationCorporateNameAndCnpjRegister'">Cancelar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
+</section>

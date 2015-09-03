@@ -1,0 +1,57 @@
+{{=[[ ]]=}}
+<section ng-controller="stateTaxCtrl">    
+    <!-- Juridical Information State Registration Info -->
+    <section id="juridicalInformationStateTaxInfo" ng-class="{inactive: $parent.hide == 'juridicalInformationStateTaxInfo'}">
+        <div class="container">
+            <div class="form-group v-margin-10">
+                <div class="row">
+                    <div class="col-xs-24 col-sm-6 col-md-6 col-lg-6">Inscri&ccedil;&atilde;o estadual</div>
+                    <div class="col-xs-24 col-sm-18 col-md-18 col-lg-18">
+                        <div ng-show="registered">
+                            <strong>{{stateTaxLabel}}</strong>
+                            <div class="alert alert-sm alert-success fadeOutSac" ng-show="showStatus">
+                                <p>Inscri&ccedil;&atilde;o estadual cadastrada</p>
+                            </div>
+                        </div>
+                        <a ng-hide="registered" href="" ng-click="$parent.show = 'juridicalInformationStateTaxRegister' ; $parent.hide='juridicalInformationStateTaxInfo'">Cadastrar inscri&ccedil;&atilde;o estadual</a>    
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
+
+    <!-- Juridical Information State Registration Register -->
+    <section id="juridicalInformationStateTaxRegister" ng-class="{active: $parent.show == 'juridicalInformationStateTaxRegister'}" class="inactive">
+        <div class="container">
+            <div class="form-group">
+                <div class="bgRecoveryBox">
+                    <h5 class="col-xs-24 col-sm-24 col-md-24 col-lg-24">Inscri&ccedil;&atilde;o estadual</h5>
+                    <form ng-submit="stateTax.create()">
+                        <div class="row">
+                            <div class="col-xs-24 col-sm-4 col-md-3 col-lg-3 v-margin-only-bottom-15">
+                                <label>UF</label>
+                                <select ng-change="stateTax.selectMask()" class="form-control h-padding-5" ng-model="estado" ng-options="estado for estado in estados">
+                                    <option value="">--</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-24 col-sm-10 col-md-12 col-lg-12 ">
+                                <label>N&uacute;mero da inscri&ccedil;&atilde;o</label>
+                                <div sac-input mask="stateTaxMask" helpblockclass="'col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left'" inputclass="'col-xs-24 col-sm-18 col-md-14 col-lg-14 no-padding-right no-padding-left'"  type="'text'" name="'stateTaxNumber'" field="stateTaxNumber" placeholder="stateTaxPlaceHolder" disabledinput="stateTaxInputDisabled"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 h-padding-only-right-5">
+                                <button class="btn btn-block btn-primary">Salvar</button>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 h-padding-only-left-5">
+                                <button class="btn btn-block btn-default" type="button" ng-click="$parent.show = 'juridicalInformationStateTaxInfo' ; $parent.hide='juridicalInformationStateTaxRegister'">Cancelar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
+</section>

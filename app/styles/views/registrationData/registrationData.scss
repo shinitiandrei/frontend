@@ -1,0 +1,60 @@
+&#registrationData{
+
+    section.inactive{
+        display: none;
+    }
+
+    section.active{
+        display: block;
+    }
+
+    .characatersLeft{
+        float: right;
+        font-size: 12px;
+    }
+
+    .borderTitle{
+        padding-bottom: 10px;
+        border-bottom: 1px solid $yellowUol;
+    }
+
+    .yellowTitle {
+        color: $yellowUol;
+    }
+
+    .hrWhite{
+       border-color: #fff;
+    }
+
+    .bgRecoveryBox{
+        background-color: #f1f1f1;
+        padding: 30px 10px;
+    }
+
+    .boxInactive{
+        display: none;
+    }
+
+    .alert{
+        margin-bottom: 0;
+    }
+    .alert-sm {
+        padding: 14px 0 16px 38px;
+    }
+    .alert-sm:before{
+        left: 0;
+    }
+
+    .fadeOutSac.ng-hide{
+        opacity:0;
+        -webkit-transition:all linear 0.5s;
+        transition:all linear 0.5s;
+    }
+
+    @media (min-width: $col-sm) and (max-width: $col-md){
+        .tooltip-inner{
+            margin-right: -65px;
+        }
+    }
+
+}

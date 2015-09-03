@@ -1,0 +1,34 @@
+{{=[[ ]]=}}
+<section id="creditCard" ng-controller="creditCardCtrl">
+    <form action="" ng-submit="makePayment()">
+        <div class="row v-margin-only-top-10">
+            <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+                N&uacute;mero do cart&atilde;o
+                 <div sac-input-credit-card maxlength="16" name="'number'" field="number" helpblockclass="'col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right'" inputclass="'col-xs-24 col-sm-9 col-md-8 col-lg-8 no-padding-left no-padding-right'" brand="cardBrand"></div>
+            </div>
+            <div class="col-xs-24 col-sm-7 col-md-6 col-lg-6 h-margin-only-right-10">
+                Data de validade
+                <div class="row">
+                    <div sac-multiple-input disabledinput="inputEnable" helpblockclass="'col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right'" name="'expirationDate'" field="expirationDate" optionlist="expirationInputs"></div>
+                </div>
+            </div>
+            <div class="col-xs-24 col-sm-12 col-md-8 col-lg-12">
+                C&oacute;digo de seguran&ccedil;a
+                <span tooltip-html-unsafe="Insira o c&oacute;digo de seguran&ccedil;a localizado no verso do seu cart&atilde;o." class="tooltipIcon"></span>
+                <div sac-input disabledinput="inputEnable" type="'text'" maxlength="3" name="'cardCvv'" field="cardCvv" helpblockclass="'col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right'" inputclass="'col-xs-8 col-sm-8 col-md-8 col-lg-5 no-padding-left no-padding-right'" placeholder="'---'"></div>
+            </div>
+            <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24 fixRightBorder">
+                Quantidade de parcelas
+                <div sac-select disabledinput="inputEnable" labeldefault="'Selecione a quantidade'" name="'installments'" field="installments" optionlist="installmentsQuantity" optionname="name" helpblockclass="'col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right'" inputclass="'col-xs-24 col-sm-6 col-md-6 col-lg-6 no-padding-left no-padding-right'"></div>
+            </div>
+        </div>
+        <div class="row v-margin-10">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 v-margin-only-bottom-10">
+                <button type="submit" class="btn btn-primary col-xs-24 col-sm-24 col-md-24 col-lg-24">Quitar d&eacute;bito</button>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <button type="button" ng-click="$parent.showMethod = ''" class="btn btn-default btn-block">Cancelar</button>
+            </div>
+        </div>
+    </form>
+</section>

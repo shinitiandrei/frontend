@@ -1,0 +1,53 @@
+{{=[[ ]]=}}
+<section id="login" class="no-margin" analytics-breadcrumb="login" analytics-typepage="card"  >
+    [[> ../includes/preloader.inc ]]
+	<div class="login-wrapper" ng-show="!preloader" >
+		<div class="container" >
+			<div class="panel-login" ng-class="{ 'withMessage' : notify.title }"  >
+			    <div class="panel panel-warning">
+
+			        <div class="panel-heading"><h3 class="panel-title">Acessar {{sacProductNameOnLoginScreen}}</h3></div>
+
+			        <div class="panel-body" >
+			            <form ng-submit="submitForm()" method="post" >
+
+							<input type=hidden name="skin" value="{{skin}}" />
+							<input type=hidden name="dest" id="dest" value="{{dest}}" />
+
+							<div class="col-xs-24 col-sm-24 col-md-24 col-lg-24" ng-show="notify.visible" >
+								<div class="alert alert-sm alert-{{notify.type}} bg-alert">
+							      	<strong ng-show="notify.title" ng-bind-html="notify.title" ></strong>
+							        <p ng-bind-html="notify.message"></p>
+							    </div>
+							</div>
+
+							<div class="row {{fields.user.css}} v-margin-only-top-20"  ng-show="!hideFileds" >
+                                <label class="control-label col-xs-24 col-sm-24 col-md-24 col-lg-24" >Digite seu e-mail</label>
+							    <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24" >
+							    	<input type="hidden" ng-value="fields.user.value" name="user" />
+							        <input type="text" class="form-control" ng-model="fields.user.value" ng-change="clear(this)" name="userb" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" /><!-- contorno para renderizacão com flicker no ie, o nome user, sabe Dues pq, conflitava -->
+							        <small>UOL, BOL, ZIP, Folha ou outro e-mail cadastrado em produtos {{productNameOnLoginScreen}}.</small>
+							    </div>
+							</div>
+
+							<div class="row {{fields.pass.css}} v-margin-only-top-30 v-margin-only-bottom-10"   ng-show="!hideFileds" >
+                                <label class="control-label col-xs-24 col-sm-24 col-md-24 col-lg-24" >Senha</label>
+							    <div  class="col-xs-24 col-sm-24 col-md-16 col-lg-16 v-margin-only-bottom-20" >
+							          <div class="input-group">
+							                <input type="password" class="form-control" name="pass" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" ng-model="fields.pass.value" ng-change="clear(this)"  >
+							                <span class="input-group-addon">
+                                                <a analytics-on="click" analytics-event="click" analytics-ref="login-esqueci-senha" analytics-url="{{urlPasswordRecovery}}" ng-href="{{urlPasswordRecovery}}" >esqueceu?</a>
+                                            </span>
+							          </div>
+							    </div>
+							    <div class="col-xs-24 col-sm-24 col-md-8 col-lg-8" >
+							        <button type="submit" class="btn btn-primary col-xs-24 col-sm-24 col-md-24 col-lg-24" click-once id="submitLogin" click-once-validate="validate" >Entrar</button>
+							    </div>
+							</div>
+			            </form>
+			        </div>
+			    </div>
+			</div>
+		</div>
+	</div>
+</section>

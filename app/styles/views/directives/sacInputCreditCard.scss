@@ -1,0 +1,27 @@
+.inputedCardFlag{
+    position:absolute;
+    top:0px;
+    right:10px;
+    z-index: 1000;
+    height:35px;
+}
+
+
+.creditCardInput::-webkit-input-placeholder { /* WebKit browsers */
+   color: #ffffff;
+}
+.creditCardInput:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color: #ffffff;
+   opacity:  1;
+}
+.creditCardInput::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: #ffffff;
+   opacity:  1;
+}
+.creditCardInput:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color: #ffffff;
+}
+
+.creditCardInput::-ms-clear {
+    display: none;
+}

@@ -1,0 +1,145 @@
+#footerLinks{
+
+    height: auto;
+    max-width: $innerWidth;
+    width:100%;
+    margin: 30px auto 30px;
+
+    @media not all, (max-width: $col-sm - 1 ) {
+        margin: 0px 0 30px 0;
+    }
+
+    .footerTwiceSplitter {
+
+
+        .footerLinksColumn{
+
+            text-align: left;
+            margin-bottom: 10px;
+            min-height: 200px;
+            border-left: 1px solid $hrGrey;
+            padding-left: 30px;
+
+            h4{
+                font-size: 17px;
+            }
+
+            a{
+                clear: both;
+                float: left;
+                margin: 5px 0;
+                cursor: pointer;
+                font-size: 15px;
+            }
+
+        }
+
+        &:first-child{
+            .footerLinksColumn{
+                &:first-child{
+                    border-left: none;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                }
+            }
+
+        }
+
+    }
+
+    .panel{
+
+        border: none;
+        border-bottom: 1px solid $officialGrey;
+        background: none;
+        text-align: left;
+        font-size: 1em;
+        border-radius: 0px;
+        box-shadow: none;
+        margin-bottom: 0px;
+        padding-left: 0;
+        padding-right: 0;
+
+
+        .uolglyph-chevron-right{
+            width: 0;
+            height: 0;
+            margin-top:10px;
+            border-style: solid;
+            border-width: 4.5px 0 4.5px 5px;
+            border-color: transparent transparent transparent $linkColor;
+        }
+
+        .uolglyph-chevron-down{
+            width: 0;
+            height: 0;
+            margin-top:10px;
+            border-style: solid;
+            border-width: 4px 4.5px 0 4.5px;
+            border-color: #000000 transparent transparent transparent;
+        }
+
+        .down {
+            color: #000;
+        }
+
+
+        .right{
+            color: $linkColor;
+        }
+
+        .panel-heading{
+
+            background: none;
+            border-radius: 0px;
+            padding: 10px 15px 0;
+
+            a{
+                display: block;
+                width: 100%;
+                line-height: 30px;
+                cursor: pointer;
+
+                &:hover{
+                    text-decoration: none;
+                }
+            }
+
+            h4.panel-title{
+
+                margin-bottom:10px;
+                display: block;
+
+                a {
+                    span.right{
+                        margin-bottom:10px;
+                    }
+
+                    span.down{
+                        margin-bottom:0px;
+                    }
+                }
+
+            }
+
+        }
+
+        .panel-collapse{
+
+            .panel-body{
+
+                border-top: none;
+                padding: 0px 15px 24px;
+
+                .menuLink{
+                    margin: 0  0 10px 0;
+                    cursor: pointer;
+                }
+
+            }
+
+        }
+
+    }
+
+}

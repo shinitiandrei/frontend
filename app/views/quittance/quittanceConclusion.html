@@ -1,0 +1,17 @@
+{{=[[ ]]=}}
+<section id="quittanceConclusion" ng-class="{ 'no-margin-top v-margin-only-bottom-30' : Notify.getAllNotifies().length > 0, 'v-margin' : Notify.getAllNotifies().length == 0 }">
+    <div class="container">
+        <div class="form-group">
+            <div class="alert alert-success">
+                <strong>D&eacute;bito quitado!</strong>
+                <p>Recebemos o seu pagamento no valor de <b>R$ {{paymentValue}}</b><br/>
+
+                <div class="row v-margin-20">
+                    <div class="col-xs-24 col-sm-10 col-md-7 col-lg-7 no-padding-left no-padding-right">
+                        <button ng-click="backToProductsAndServices()" class="btn btn-primary col-xs-24 col-sm-24 col-md-24 col-lg-24" >Voltar para Meus produtos</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

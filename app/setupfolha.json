@@ -1,0 +1,233 @@
+{
+    "id": "sac-metatemplate",
+    "name": "SAC 2.0",
+    "extensions": "*",
+    "parsableRegex": "",
+    "notParsableRegex": "(.*)(\\\\|\\/)images(\\\\|\\/)(.*)|(.*)(\\\\|\\/)fonts(\\\\|\\/)(.*)|(.*)(\\\\|\\/)bower_components(\\\\|\\/)(.*)|(.*)(\\\\|\\/)scripts(\\\\|\\/)(.*)|(.*).ico|(.*).png",
+    "tabs": {
+
+        "pom": {
+            "name": "Configurações do POM",
+            "artifactId": {
+                "name": "Nome do ArtifactId",
+                "tip": "O prefixo sac-template- será adicionado.",
+                "type": "text",
+                "value": "folha"
+            },
+            "version": {
+                "name": "Version do Artifact",
+                "tip": "Version do Artifact da skin.",
+                "type": "text",
+                "value": "1.0.0"
+            }
+        },
+
+        "skin": {
+
+            "name": "Skin equivalente no SAC Legacy e Dolphin",
+            "urlParam": {
+                "name": "Skin equivalente no SAC Legacy e Dolphin",
+                "tip": "Skin equivalente no SAC Legacy e Dolphin",
+                "type": "text",
+                "value": "folha"
+            },
+
+            "mobileResponsiveness": {
+                "name": "Seta a Skin como responsiva ou não.",
+                "tip": "Seta o tamanho de 1190 para a viewport, que só afeta mobile",
+                "type": "text",
+                "value": "true"
+            },
+
+            "recoveryPasswordSuccess": {
+                "name": "URL para sucesso da recuperação de senha",
+                "tip": "url",
+                "type": "text",
+                "value": "#/login"
+
+            },
+
+            "colorHr": {
+                "name": "CSS da barra que atravessa",
+                "tip": "CSS border-top da barra que atravessa a Aplicação dividindo o Header e o Footer das Views - CSS colorHr",
+                "type": "text",
+                "value": "3px solid #F9C523"
+            },
+
+            "fixturesDir": {
+                "name": "Fixtures",
+                "tip": "Diretório que contém todos os fixtures",
+                "type": "text",
+                "value": "https://jsuol.com.br/bk/sac/folha/"
+            }
+
+        },
+
+        "head": {
+
+            "name": "HTML Metadata",
+
+            "title": {
+                "name": "Título do Browser para a Aplicação",
+                "tip": "Título do Navegador",
+                "type": "text",
+                "value": "Folha SAC"
+            },
+
+            "favicons": {
+                "name": "Favicons do Browser",
+                "tip": "Favicons",
+                "type": "textarea",
+                "value": "<link rel='SHORTCUT ICON' href='images/favicons/folha/favicon.ico' />\r\n<link href='images/favicons/folha/apple-touch-icon.png' rel='apple-touch-icon'  />\r\n<link href='images/favicons/folha/apple-touch-icon-29x29.png' rel='apple-touch-icon' sizes='29x29' />\r\n<link href='images/favicons/folha/apple-touch-icon-40x40.png' rel='apple-touch-icon' sizes='40x40' />\r\n<link href='images/favicons/folha/apple-touch-icon-50x50.png' rel='apple-touch-icon' sizes='50x50' />\r\n<link href='images/favicons/folha/apple-touch-icon-57x57.png' rel='apple-touch-icon' sizes='57x57' />\r\n<link href='images/favicons/folha/apple-touch-icon-60x60.png' rel='apple-touch-icon' sizes='60x60' />\r\n<link href='images/favicons/folha/apple-touch-icon-76x76.png' rel='apple-touch-icon' sizes='72x72' />\r\n<link href='images/favicons/folha/apple-touch-icon-76x76.png' rel='apple-touch-icon' sizes='76x76' />\r\n<link href='images/favicons/folha/apple-touch-icon-120x120.png' rel='apple-touch-icon' sizes='120x120' />\r\n<link href='images/favicons/folha/apple-touch-icon-152x152.png' rel='apple-touch-icon' sizes='152x152' />"
+            },
+
+            "js": {
+                "name": "Arquivos Javascript",
+                "tip": "Arquivos CSS utilizados nos fluxos de SAC.",
+                "type": "array",
+                "values": [
+                    "https://sac.uol.com.br/info/sac/default/js/uol.js",
+                    "https://jsuol.com.br/g/uolfw/beta/js/UOLfw.js"
+                ]
+            },
+
+            "backGroundBorderRepeater": {
+                "name": "Imagem de plano de fundo, atribuída a tag HTML, que se repete para formar a delimitação da página.",
+                "tip": "Imagem de plano de fundo da Páginal Geral",
+                "type": "text",
+                "value": "url('../images/background-pagina.jpg') repeat-y scroll center top #F2F2F2"
+            }
+
+
+
+        },
+
+        "header": {
+
+            "name": "Topo",
+
+            "usebar": {
+                "name": "Usar barra UOL",
+                "tip": "Usar ou não usar Barra UOL.",
+                "type": "checkbox",
+                "value": false
+            },
+
+            "backGroundLogo": {
+                "name": "Logo do Produto no Header SAC",
+                "tip": "Logo do Produto",
+                "type": "text",
+                "value": "url('../images/spriteLogosUOL.png') no-repeat scroll -346px -270px #FFFFFF"
+            }
+
+        },
+
+        "content": {
+            "name": "Conteúdo",
+            "foneCapital": {
+                "name": "Telefone Central Capital",
+                "tip": "Telefone referente a atendimento de capitais.",
+                "type": "text",
+                "value": "4003-6969"
+            },
+            "foneInterior": {
+                "name": "Telefone Central Interior",
+                "tip": "Telefone referente a atendimento de interior.",
+                "type": "text",
+                "value": "0800 771 7774"
+            }
+        },
+
+        "home" : {
+
+            "name": "Home Assets",
+            "jsonHomeThumbList": {
+                "name": "Lista de Botões de Auto Atendimento Home",
+                "tip": "Lista de Botões de Auto Atendimento Home ex. https://sac.uol.com.br/scripts/fixtures/homeThumbs/homeThumbUol.json",
+                "type": "text",
+                "value": "https://sac.uol.com.br/folha/scripts/fixtures/homeThumbs/homeThumbFolha.json"
+            }
+
+        },
+
+        "footer": {
+            "name": "JavaScript  CancelInfo Rodapé",
+            "jsonFooter": {
+                "name": "json que alimenta o Rodapé",
+                "tip": "Arquivo jSon que alimenta o Footer, ex. https://sac.uol.com.br/scripts/fixtures/footer/footer.json",
+                "type": "text",
+                "value": "https://sac.uol.com.br/folha/scripts/fixtures/footer/footerFolha.json"
+            },
+
+            "js": {
+                "name": "Arquivos Javascript Footer ",
+                "tip": "Arquivos JS utilizados no Footer SAC.",
+                "type": "array",
+                "values": [
+                    "https://jsuol.com.br/g/uolfw/beta/js/UOLfw.js"
+                ]
+            }
+        },
+
+        "resources": {
+            "name": "Arquivos estéticos",
+            "jsHead": {
+                "name": "Arquivos Javascript, chamados na tag Head da página",
+                "tip": "Arquivos CSS utilizados nos fluxos de SAC.",
+                "type": "array",
+                "values": [
+                    "https://sac.uol.com.br/info/sac/default/js/uol.js"
+                ]
+            },
+            "jsFooter": {
+                "name": "Arquivos Javascript",
+                "tip": "Arquivos JS utilizados nos fluxos de SAC, chamados no fim da página.",
+                "type": "array",
+                "values": [ "https://jsuol.com.br/g/uol/components/footer.js" ]
+            },
+            "css": {
+                "name": "Arquivos de Estilo CSS",
+                "tip": "Arquivos de Estilo CSS",
+                "type": "array",
+                "values": [
+                    "styles/uol-bootstrap.css"
+                ]
+            },
+            "js-autorizacao": {
+                "name": "Script de autorizações",
+                "tip": "Script de autorizaões das porteiras ligado a skin.",
+                "type": "text",
+                "value": "https://simg.uol.com.br/nocache/pp-ead-commons/porteiras/autorizacoes.js"
+            },
+            "js-omtr": {
+                "name": "Script de Omniture",
+                "tip": "Script de Omniture das porteiras ligado a skin.",
+                "type": "text",
+                "value": "https://simg.uol.com.br/nocache/omtr/camaleao.js"
+            },
+            "js-tagmanager": {
+                "name": "Script de TagManager",
+                "tip": "Script de TagManager das porteiras ligado a skin.",
+                "type": "text",
+                "value": "tag"
+            }
+        },
+
+        "metricas": {
+            "name": "Métricas utilizadas no UOL",
+            "omniture": {
+                "name": "Omniture",
+                "tip": "Métrica do UOL utilizada para mensurar a quantidade de acesso aos produtos.",
+                "type": "checkbox",
+                "value": true
+            },
+            "js-autorizacao": {
+                "name": "Utilizar Script de autorizações",
+                "tip": "Selecione para habilitar o uso das Configurações do Script de autorizações.",
+                "type": "checkbox",
+                "value": true
+            }
+        }
+
+    }
+}

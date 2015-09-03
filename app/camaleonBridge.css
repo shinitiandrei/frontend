@@ -1,0 +1,89 @@
+    /* {{=[[ ]]=}} */
+
+    div.colorHr {
+        border-top: 3px solid [[camaleao.tabs.skin.brandColor.value]];
+    }
+
+    html body  #loading-bar .bar{
+        background: [[camaleao.tabs.skin.brandColor.value]];
+    }
+
+    html body div#wrapper div#containerView #login div.login-wrapper .container div.panel-login div.panel-heading{
+        background: [[camaleao.tabs.skin.brandColor.value]];
+        border-color: [[camaleao.tabs.skin.brandColor.value]];
+    }
+
+    html body div#wrapper div#containerView section#home section#homeThumbs .homeThumb .homeThumbFakeBorder .thumbnail:hover,
+    html body div#wrapper div#containerView section#home section#homeThumbs .homeThumb .homeThumbFakeBorder .thumbnail:focus,
+    html body div#wrapper div#containerView section#home section#homeThumbs .homeThumb .homeThumbFakeBorder .thumbnail.active,
+    html body div#wrapper div#containerView section#home section#homeFAQ .row .first-border .second-border:hover,
+    html body div#wrapper div#containerView section#home section#homeFAQ .row .first-border .second-border:focus,
+    html body div#wrapper div#containerView section#home section#homeFAQ .row .first-border .second-border.active {
+        border-color: [[camaleao.tabs.skin.brandColor.value]];
+    }
+
+    html body div#header div#desktop-menu .navbar-collapse a:hover{
+        background-color: [[camaleao.tabs.skin.brandColor.value]];
+    }
+
+    html body div#wrapper div#containerView section .borderTitle, html body div#wrapper div#containerView section .yellowTitle {
+        border-bottom-color: [[camaleao.tabs.skin.brandColor.value]]!important;
+        color: [[camaleao.tabs.skin.brandColor.value]]!important;
+    }
+
+    html body div#wrapper div#containerView .arrowBrown polyline{
+        stroke: [[camaleao.tabs.skin.arrowColor.value]];
+    }
+
+    html body div#header .navbar-toggle g#icon-menu g path{
+         fill: [[camaleao.tabs.skin.arrowColor.value]];
+    }
+
+
+
+
+
+     /*   BOOTSTRAP PRIMARY BUTTON   */
+    /*  ==============  */
+
+    .btn-primary {
+        background-image: linear-gradient(to bottom, #C1380E 0px, #8B1304 100%);
+        background-repeat: repeat-x;
+        border-color: #8B1304;
+        color: #fff;
+        text-shadow: 0 0 4px #8B1304;
+    }
+
+
+    .btn-primary.active, .btn-primary:active, .btn-primary:focus, .btn-primary:hover, .open .btn-primary.dropdown-toggle {
+        background-image: linear-gradient(to bottom, #DE562A 0px, #A82F23 100%);
+        background-repeat: repeat-x;
+        border-color: #8B1304;
+        color: #fff;
+    }
+
+
+    .btn-primary.disabled, .btn-primary.disabled.active, .btn-primary.disabled:active, .btn-primary.disabled:focus, .btn-primary.disabled:hover, .btn-primary[disabled], .btn-primary.active[disabled], .btn-primary[disabled]:active, .btn-primary[disabled]:focus, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary, fieldset[disabled] .btn-primary.active, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary:hover {
+        background-color: #01A592;
+        order-color: #01A38E;
+    }
+
+
+    .btn-primary .badge {
+        background-color: #fff;
+        color: #2FCDBB;
+    }
+
+
+    html body div#header div#desktop-menu .navbar-collapse a:hover {
+        color: #232423;
+    }
+
+
+
+
+
+
+
+
+

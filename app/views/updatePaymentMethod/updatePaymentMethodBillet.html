@@ -1,0 +1,136 @@
+{{=[[ ]]=}}
+<section id="updatePaymentMethodBillet" ng-controller="updatePaymentMethodBilletCtrl" ng-show="true">
+    <div class="row">
+        <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+            <strong>Vencimento do boleto</strong>
+        </div>
+    </div>
+
+    <div class="row v-margin-10">
+        <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+            <span>Selecione a data</span>
+            <div sac-select name="'billetExpirationDate'" field="billetExpirationDate" optionlist="expirationDate" optionname="name" helpblockclass="'col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right'" inputclass="'col-xs-11 col-sm-5 col-md-4 col-lg-4 no-padding-left no-padding-right'"></div>
+        </div>    
+    </div>
+
+    <div class="row">
+        <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+            <strong>Endere&ccedil;o de cobran&ccedil;a</strong>
+        </div>
+        <form>
+            <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+                <div class="radio col-xs-12 col-sm-5 col-md-4 col-lg-4">
+                    <label>
+                        <input type="radio" name="addressSelect" ng-click="showCurrentAddress = true" checked>&nbsp;Endere&ccedil;o Atual
+                    </label> 
+                </div>
+
+                <div class="radio col-xs-12 col-sm-6 col-md-5 col-lg-5">
+                    <label>
+                        <input type="radio" name="addressSelect" ng-click="showCurrentAddress = false">&nbsp;Usar outro endere&ccedil;o
+                    </label> 
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <section id="currentAddress" ng-show="showCurrentAddress">
+        <div class="row v-margin-20">
+            <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+                <span>{{mockAddress.street}}, {{mockAddress.number}}</span>
+                <br>
+                <span>{{mockAddress.neighborhood}}</span>
+                <br>
+                <span>{{mockAddress.complement}}</span>
+                <br>
+                <span>{{mockAddress.city}} - {{mockAddress.state}}</span>
+                <br>
+                <span>{{mockAddress.zipcode}}</span>
+            </div>
+        </div>
+    </section>
+    <section id="newAddress"  ng-hide="showCurrentAddress">
+        <div id="insertZipcode">
+            <div class="row v-margin-20">
+                <form ng-submit="address.search()">
+                    <div class="col-xs-14 col-sm-6 col-md-5 col-lg-5">
+                        <div sac-input mask="'?9?9?9?9?9-?9?9?9'" helpblockclass="'helpblockWidth col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right no-margin v-margin-only-top-5'" inputclass="'col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right'"  type="'text'" name="'zipcode'" field="zipcode" placeholder="'_____-___'" ></div>
+                        <span class="small-font no-margin-bottom">N&atilde;o sabe seu CEP? <a href="#">Pesquisar</a></span>
+                    </div>
+                    <div class="col-xs-9 col-sm-4 col-md-3 col-lg-3">
+                        <button type="submit" class="btn btn-default btn-block" >Buscar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="incompleteAddress" ng-show="showAddress == 'incompleteAddress'">
+            <div class="row">
+                <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+                    <div class="v-margin-10">
+                        <span>Endere&ccedil;o</span>
+                    </div>
+                    <span>{{mockAddress.street}}</span>
+                    <br>
+                    <span>{{mockAddress.neighborhood}}</span>
+                    <br>
+                    <span>{{mockAddress.city}} - {{mockAddress.state}}</span>
+                    <br>
+                    <div class="col-xs-9 col-sm-5 col-md-3 col-lg-3 no-padding-left v-margin-10">
+                        <label>N&uacute;mero</label>
+                        <div sac-input mask="''" helpblockclass="'helpblockWidth col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right no-margin v-margin-only-top-5'" inputclass="'col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right'"  type="'text'" name="'incompleteAddressNumber'" field="incompleteAddressNumber" placeholder="''" ></div>
+                    </div>
+                    <div class="col-xs-15 col-sm-10 col-md-8 col-lg-8 v-margin-10">
+                        <label>Complemento<span class="small-font"> (opcional)</span></label>
+                        <div sac-input mask="''" helpblockclass="'helpblockWidth col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right no-margin v-margin-only-top-5'" inputclass="'col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right'"  type="'text'" name="'incompleteAddressComplement'" field="incompleteAddressComplement" placeholder="''" ></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="emptyAddress" ng-show="showAddress == 'emptyAddress'">
+            <div class="row">
+                <div class="col-xs-24 col-sm-15 col-md-11 col-lg-11">
+                    <label>Endere&ccedil;o</label>
+                    <div sac-input mask="''" helpblockclass="'helpblockWidth col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right no-margin v-margin-only-top-5'" inputclass="'col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right'"  type="'text'" name="'emptyAddressStreet'" field="emptyAddressStreet" placeholder="''" ></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-9 col-sm-5 col-md-3 col-lg-3 v-margin-10">
+                    <label>N&uacute;mero</label>
+                    <div sac-input mask="''" helpblockclass="'helpblockWidth col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right no-margin v-margin-only-top-5'" inputclass="'col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right'"  type="'text'" name="'emptyAddressNumber'" field="emptyAddressNumber" placeholder="''" ></div>
+                </div>
+                <div class="col-xs-15 col-sm-10 col-md-8 col-lg-8 v-margin-10">
+                    <label>Complemento<span class="small-font">&nbsp;(opcional)</span></label>
+                    <div sac-input mask="''" helpblockclass="'helpblockWidth col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right no-margin v-margin-only-top-5'" inputclass="'col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right'"  type="'text'" name="'emptyAddressComplement'" field="emptyAddressComplement" placeholder="''" ></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-24 col-sm-10 col-md-6 col-lg-6">
+                    <label>Bairro</label>
+                    <div sac-input mask="''" helpblockclass="'helpblockWidth col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right no-margin v-margin-only-top-5'" inputclass="'col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right'"  type="'text'" name="'emptyAddressNeighborhood'" field="emptyAddressNeighborhood" placeholder="''" ></div>
+                </div>
+            </div>
+            <div class="row v-margin-20">
+                <div class="col-xs-12 col-sm-10 col-md-6 col-lg-6">
+                    <label>Cidade</label>
+                    <br>
+                    <span>{{mockAddress.city}}</span>
+                </div>
+                <div class="col-xs-12 col-sm-10 col-md-6 col-lg-6">
+                    <label>Estado</label>
+                    <br>
+                    <span>{{mockAddress.state}}</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="row v-margin-10">
+        <div class="col-xs-12 col-sm-5 col-md-4 col-lg-4 v-margin-only-bottom-10">
+            <button type="submit" class="btn btn-primary col-xs-24 col-sm-24 col-md-24 col-lg-24" ng-click="address.update()" >Alterar</button>
+        </div>
+        <div class="col-xs-12 col-sm-5 col-md-4 col-lg-4">
+            <button type="submit" class="btn btn-default btn-block" >Cancelar</button>
+        </div>
+    </div>
+</section>

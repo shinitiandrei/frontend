@@ -1,0 +1,168 @@
+{{=[[ ]]=}}
+<section ng-controller="passwordAndSecurity_cellphoneCtrl">
+
+
+    <!-- Phone Create -->
+    <section id="cellphoneRecovery" ng-class="{inactive: $parent.hideThis == 'cellphoneRecovery'}">
+        <div class="container">
+            <div class="form-group v-margin">
+
+                <div class="row">
+
+                    <div class="col-xs-24 col-sm-6 col-md-6 col-lg-6">Telefone de recuperação</div>
+
+                    <div class="col-xs-24 col-sm-18 col-md-18 col-lg-18" ng-show="$parent.preloader">
+                        <div class="alert alert-sm alert-loader alert-loader-box"></div>
+                    </div>
+
+                    <div class="col-xs-24 col-sm-18 col-md-18 col-lg-18" ng-show="!$parent.preloader">
+                        <strong>{{cellPhoneLabel}}</strong> - <a href="" ng-click="$parent.showThis = 'cellphoneEdit' ;  $parent.hideThis='cellphoneRecovery'">{{cellPhoneLink}}</a>
+                        <div ng-if='cellPhoneStatus == "ACTIVE"'>
+                            <div class="alert alert-sm alert-success">
+                                <p>Confirmado</p>
+                            </div>
+                        </div>
+                        <div ng-if='cellPhoneStatus == "NOT_CONFIRMED"'>
+                            <div class="alert alert-sm alert-warning">
+                                <p>Não confirmado - <a href="" ng-click="$parent.$parent.showThis = 'insertSms' ; $parent.hideThis='cellphoneRecovery'">Confirmar celular</a></p>
+                            </div>
+                        </div>
+                        <div ng-if='cellPhoneStatus == "PENDING"'>
+                            <div class="alert alert-sm alert-warning">
+                                <p>Aguardando confirmação - <a href="" ng-click="$parent.$parent.showThis = 'insertSms' ; $parent.hideThis='cellphoneRecovery'">Confirmar celular</a></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
+
+
+
+
+    <!-- Phone recovery -->
+    <section id="cellphoneRecovery" ng-class="{inactive: $parent.hideThis == 'cellphoneRecovery'}">
+        <div class="container">
+            <div class="form-group v-margin">
+
+                <div class="row">
+
+                    <div class="col-xs-24 col-sm-6 col-md-6 col-lg-6">Telefone de recuperação</div>
+
+                    <div class="col-xs-24 col-sm-18 col-md-18 col-lg-18" ng-show="$parent.preloader">
+                        <div class="alert alert-sm alert-loader alert-loader-box"></div>
+                    </div>
+
+                    <div class="col-xs-24 col-sm-18 col-md-18 col-lg-18" ng-show="!$parent.preloader">
+                        <strong>{{cellPhoneLabel}}</strong> - <a href="" ng-click="$parent.showThis = 'cellphoneEdit' ;  $parent.hideThis='cellphoneRecovery'">{{cellPhoneLink}}</a>
+                        <div ng-if='cellPhoneStatus == "ACTIVE"'>
+                            <div class="alert alert-sm alert-success">
+                                <p>Confirmado</p>
+                            </div>
+                        </div>
+                        <div ng-if='cellPhoneStatus == "NOT_CONFIRMED"'>
+                            <div class="alert alert-sm alert-warning">
+                                <p>Não confirmado - <a href="" ng-click="$parent.$parent.showThis = 'insertSms' ; $parent.hideThis='cellphoneRecovery'">Confirmar celular</a></p>
+                            </div>
+                        </div>
+                        <div ng-if='cellPhoneStatus == "PENDING"'>
+                            <div class="alert alert-sm alert-warning">
+                                <p>Aguardando confirmação - <a href="" ng-click="$parent.$parent.showThis = 'insertSms' ; $parent.hideThis='cellphoneRecovery'">Confirmar celular</a></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Edit CellPhone -->
+    <section id="cellphoneEdit" ng-class="{active: $parent.showThis == 'cellphoneEdit'}" class="inactive" >
+        <div class="container">
+            <div class="form-group bgRecoveryBox">
+                <div class="row">
+                    <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+                        <h5>Telefone de recuperação</h5>
+                        <form ng-submit="cellphone.change()">
+                            <p>Caso você esqueça a senha, usaremos o telefone cadastrado como auxílio para recuperar o seu acesso.</p>
+                            <div sac-input mask="'(?9?9) ?9?9?9?9?9?9?9?9?9'" helpblockclass="'col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right'" inputclass="'col-xs-24 col-sm-10 col-md-6 col-lg-6 no-padding-left no-padding-right'"  type="'text'" name="'cellphone'" field="cellphone" placeholder="'(__) _________'" ></div>
+                            <button class="btn btn-primary">Avançar</button>
+                            <button class="btn btn-default" type="button" ng-click="$parent.showThis = 'cellphoneRecovery' ;  $parent.hideThis='cellphoneEdit'">Cancelar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Send SMS -->
+    <section id="sendSms" ng-class="{active: $parent.showThis == 'sendSms'}" class="inactive">
+        <div class="container">
+            <div class="form-group bgRecoveryBox">
+                <div class="row">
+                    <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+                        <h5>Telefone de recuperação</h5>
+                        <p>Para confirmarmos que seu celular é válido, enviaremos um SMS com um código para:<br/>
+                        <strong>{{cellPhoneLabel}}</strong> - <a href="" ng-click="$parent.showThis = 'cellphoneEdit' ; $parent.hideThis='cellphoneRecovery'">editar</a></p>
+                        <button class="btn btn-danger" ng-click="sms.send()">Receber código</button>
+                        <button class="btn btn-default" type="button" ng-click="$parent.showThis = 'cellphoneRecovery' ; $parent.hideThis='insertSms'">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!-- Insert Code -->
+    <section id="insertSms" ng-class="{active: $parent.showThis == 'insertSms'}" class="inactive">
+        <div class="container">
+            <div class="form-group bgRecoveryBox">
+                <div class="row">
+                    <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+                        <h5>Telefone de recuperação</h5>
+                        <form ng-submit="token.insert()">
+                            <p>Insira o código do SMS que enviamos ao seu numero de telefone para confirmá-lo.<br/>
+                            Ainda não recebeu seu código? O SMS pode levar até <strong>15 minutos</strong> para chegar ao seu celular.</p>
+                            <label>Código de confirmação</label>
+                            <div sac-input helpblockclass="'col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right'" inputclass="'col-xs-24 col-sm-8 col-md-4 col-lg-4 no-padding-left no-padding-right'"  type="'text'" name="'token'" field="token" placeholder="'Token'" ></div>
+                            <button class="btn btn-danger">Confirmar</button>
+                            <button class="btn btn-default" type="button" ng-click="$parent.showThis = 'cellphoneRecovery' ; $parent.hideThis='insertSms'">Cancelar</button><br/><br/>
+                        </form>
+                        <p>Ainda não recebeu seu código? <a href="" ng-click="sms.sendAgain()">Clique aqui</a></p>
+                    </div>
+                </div>
+                <div class="row h-margin-10" ng-show="notifyBelow">
+                    <div class="alert alert-sm alert-{{notifyBelowType}}">
+                        <p>{{notifyBelowMessage}}</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
+
+
+
+
+
+
+</section>

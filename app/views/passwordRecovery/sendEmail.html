@@ -1,0 +1,28 @@
+{{=[[ ]]=}}
+<section id="sendEmail" ng-class="{ 'no-margin-top v-margin-only-bottom-30' : Notify.getAllNotifies().length > 0, 'v-margin' : Notify.getAllNotifies().length == 0 }"  >
+    <div class="container no-padding">
+        [[> ../includes/preloader.inc ]]
+        <div class="form-group" ng-show="!preloader" >
+            <h4>Esqueceu sua senha?</h4>
+            <form ng-submit="alternativeEmail.send()">
+                <div class="row">
+                    <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+                        <div sac-input type="'text'" name="'alternativeEmail'" field="alternativeEmail"  control-label="'Digite seu e-mail alternativo <strong>{{maskedAlternativeEmail}}</strong> para receber as instruções de recuperação de senha.'"   inputclass="'col-xs-24 col-sm-9 col-md-9 col-lg-9 no-padding-left no-padding-right'" ></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-24 col-sm-6 col-md-5 col-lg-5">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block" click-once id="submitSendEmail" click-once-validate="validate" >Enviar e-mail</button>
+                        </div>
+                    </div>
+                    <div class="col-xs-24 col-sm-6 col-md-5 col-lg-5">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-default btn-block" ng-click="nextStep()" click-once >Não utilizar este e-mail</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

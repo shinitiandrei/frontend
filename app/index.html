@@ -1,0 +1,241 @@
+{{=[[ ]]=}}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html>
+
+    <head>
+        <title>[[camaleao.tabs.head.title.value]]</title>
+        [[> views/includes/metatags.inc ]]
+        <meta id="viewport" name="viewport" content="width=device-width" >
+        <link rel="stylesheet" href="https://jsuol.com.br/g/uolfw/1.1.0/css/UOLfw.min.css" >
+        <!-- build:css({.tmp,app}) styles/styles.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="bower_components/angular-loading-bar/src/loading-bar.css" />
+        <!-- endbuild -->
+        [[> views/includes/dynamicalyAddStaticFilesOnTop.inc]]
+    </head>
+
+    <body ng-app="uolsacApp" >
+
+        [[> views/includes/loaderCurtain.inc ]]
+
+        <div id="header" ng-controller="headerCtrl" >
+            [[> views/includes/bars.inc ]]
+            [[> views/includes/header.inc ]]
+        </div>
+
+        <div id="wrapper" class="container-fluid">
+            <div class="colorHr" ng-controller="colorHrCtrl" ng-show="colorHrLook.top.isVisible" ng-style="colorHrLook.top.css" ></div>
+            [[> views/includes/carouselAd.inc ]]
+            [[> views/includes/carouselMessage.inc ]]
+            [[> views/includes/notify.inc ]]
+            <div id="containerViewWrapper">
+                <div id="containerView" ng-view class="fadeSac" ></div>
+            </div>
+        </div>
+
+        <div id="scriptList" >
+
+            <!-- =====>> O trecho "bower:js" Injeta os scripts listados no arquivo bower.json dinamicamente -->
+            <!-- build:js({.tmp,app}) scripts/vendor.js -->
+            <!-- bower:js -->
+            <script src="bower_components/modernizr/modernizr.js"></script>
+            <script src="bower_components/jquery/jquery.js"></script>
+            <script src="bower_components/es5-shim/es5-shim.js"></script>
+            <script src="bower_components/json3/lib/json3.min.js"></script>
+            <script src="bower_components/angular/angular.js"></script>
+            <script src="bower_components/angular-resource/angular-resource.js"></script>
+            <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+            <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+            <script src="bower_components/angular-route/angular-route.js"></script>
+            <script src="bower_components/angular-animate/angular-animate.js"></script>
+            <script src="bower_components/respond/dest/respond.src.js"></script>
+            <script src="bower_components/angular-loading-bar/src/loading-bar.js"></script>
+            <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
+            <!-- endbower -->
+            <script src="scripts/uol-bootstrap.js"></script>
+            <!-- endbuild -->
+
+            <script src="scripts/directives/compile.js"></script>
+
+            <!-- build:js({.tmp,app}) scripts/scripts.js -->
+            <script src="scripts/app.js"></script>
+
+            <!-- Modules -->
+            <script src="scripts/modules/Angulartics.js"></script>
+            <script src="scripts/modules/Analytics.js"></script>
+            <script src="scripts/modules/Notify.js"></script>
+            <script src="scripts/modules/Util.js"></script>
+            <script src="scripts/modules/LoaderCurtain.js"></script>
+
+            <!-- Directives -->
+            <script src="scripts/directives/disableAnimation.js"></script>
+            <script src="scripts/directives/sacInput.js"></script>
+            <script src="scripts/directives/sacMultipleInput.js"></script>
+            <script src="scripts/directives/sacSelect.js"></script>
+            <script src="scripts/directives/sacPicture.js"></script>
+            <script src="scripts/directives/sacTuring.js"></script>
+            <script src="scripts/directives/sacInputPassword.js"></script>
+            <script src="scripts/directives/sacLoad.js"></script>
+            <script src="scripts/directives/sacRadio.js"></script>
+            <script src="scripts/directives/clickOnce.js"></script>
+            <script src="scripts/directives/sacInputCreditCard.js"></script>
+
+
+            <!-- Providers -->
+            <script src="scripts/providers/Turing.provider.js"></script>
+            <script src="scripts/providers/TuringInterceptor.provider.js"></script>
+            <script src="scripts/providers/HttpInterceptor.provider.js"></script>
+            <script src="scripts/providers/ErrorHandler.provider.js"></script>
+            <script src="scripts/providers/FieldHandler.provider.js"></script>
+            <script src="scripts/providers/FieldMap.provider.js"></script>
+            <script src="scripts/providers/Look.provider.js"></script>
+
+
+            <!-- Validators -->
+            <script src="scripts/validators/Validator.js"></script>
+            <script src="scripts/validators/LoginValidator.js"></script>
+            <script src="scripts/validators/EmailValidator.js"></script>
+            <script src="scripts/validators/CellphoneValidator.js"></script>
+            <script src="scripts/validators/CellphoneValidatorMultipleInput.js"></script>
+            <script src="scripts/validators/PasswordValidator.js"></script>
+            <script src="scripts/validators/AlternativeEmailValidator.js"></script>
+            <script src="scripts/validators/TuringValidator.js"></script>
+            <script src="scripts/validators/IsEmptyValidator.js"></script>
+            <script src="scripts/validators/PhoneValidator.js"></script>
+            <script src="scripts/validators/PhoneValidatorMultipleInput.js"></script>
+            <script src="scripts/validators/GenderValidator.js"></script>
+            <script src="scripts/validators/CardExpirationValidator.js"></script>
+            <script src="scripts/validators/BookletEmailValidator.js"></script>
+            <script src="scripts/validators/CardNumberValidator.js"></script>
+            <script src="scripts/validators/CardCvvValidator.js"></script>
+            <script src="scripts/validators/AgencyValidator.js"></script>
+            <script src="scripts/validators/CurrentAccountValidator.js"></script>
+
+            <!-- Services -->
+            <script src="scripts/services/User.js"></script>
+            <script src="scripts/services/Recoveries.js"></script>
+            <script src="scripts/services/Accounts.js"></script>
+            <script src="scripts/services/Contacts.js"></script>
+            <script src="scripts/services/PasswordChange.js"></script>
+            <script src="scripts/services/SecurityQuestions.js"></script>
+            <script src="scripts/services/Quittance.js"></script>
+            <script src="scripts/services/CreditCard.js"></script>
+
+            <!-- controllers -->
+            <script src="scripts/controllers/home/home.controller.js"></script>
+            <script src="scripts/controllers/home/Home.look.js"></script>
+            <script src="scripts/controllers/contactcenter/contactCenters.js"></script>
+            <script src="scripts/controllers/contactcenter/ContactCenter.look.js"></script>
+            <script src="scripts/controllers/emailConfirmation/emailConfirmation.js"></script>
+
+            <!-- Looks -->
+            <script src="scripts/controllers/includes/carouselAd.js"></script>
+            <script src="scripts/controllers/includes/carouselMessage.js"></script>
+            <script src="scripts/controllers/includes/footer.js"></script>
+            <script src="scripts/controllers/includes/menuFooter.controller.js"></script>
+            <script src="scripts/controllers/includes/header.js"></script>
+            <script src="scripts/controllers/includes/notify.js"></script>
+            <script src="scripts/controllers/includes/colorHr.js"></script>
+
+
+
+            <!-- Login -->
+            <script src="scripts/controllers/login/login.controller.js"></script>
+            <script src="scripts/controllers/login/attemptLimitExceeded.controller.js"></script>
+            <script src="scripts/controllers/login/attemptBlockedUser.controller.js"></script>
+            <script src="scripts/controllers/login/attemptSuspectUser.controller.js"></script>
+            <script src="scripts/controllers/login/Login.look.js"></script>
+
+
+
+            <!-- Recuperacao de senha -->
+            <script src="scripts/controllers/passwordRecovery/initialState.js"></script>
+            <script src="scripts/controllers/passwordRecovery/sendEmail.js"></script>
+            <script src="scripts/controllers/passwordRecovery/verifySmsToken.js"></script>
+            <script src="scripts/controllers/passwordRecovery/changePassword.js"></script>
+            <script src="scripts/controllers/passwordRecovery/passwordTip.js"></script>
+            <script src="scripts/controllers/passwordRecovery/confirmedCellphone.js"></script>
+            <script src="scripts/controllers/passwordRecovery/relationshipQuestions.js"></script>
+            <script src="scripts/controllers/passwordRecovery/mainMailVisitor.js"></script>
+            <script src="scripts/controllers/passwordRecovery/successfullChangedPassword.js"></script>
+            <script src="scripts/controllers/passwordRecovery/PasswordRecovery.look.js"></script>
+
+            <!-- Dados Cadastrais -->
+
+            <!-- Informações Pessoais -->
+            <script src="scripts/controllers/registrationData/registrationData.js"></script>
+            <script src="scripts/controllers/registrationData/nameAndCpf.js"></script>
+            <script src="scripts/controllers/registrationData/birthDate.js"></script>
+            <script src="scripts/controllers/registrationData/gender.js"></script>
+
+            <!-- Informações Jurídicas -->
+            <script src="scripts/controllers/registrationData/tradingName.js"></script>
+            <script src="scripts/controllers/registrationData/corporateNameAndCnpj.js"></script>
+            <script src="scripts/controllers/registrationData/stateTax.js"></script>
+            <script src="scripts/controllers/registrationData/foundationDate.js"></script>
+            <script src="scripts/controllers/registrationData/RegistrationData.look.js"></script>
+
+            <!-- Informações de Acesso -->
+            <script src="scripts/controllers/registrationData/email.js"></script>
+            <script src="scripts/controllers/registrationData/socialNetworks.js"></script>
+
+            <!-- Informações de Contato -->
+            <script src="scripts/controllers/registrationData/alternativeEmail.js"></script>
+            <script src="scripts/controllers/registrationData/cellphone.js"></script>
+            <script src="scripts/controllers/registrationData/homephone.js"></script>
+            <script src="scripts/controllers/registrationData/businessphone.js"></script>
+
+            <!-- Senha e segurança -->
+            <script src="scripts/controllers/passwordAndSecurity/passwordAndSecurity.js"></script>
+            <script src="scripts/controllers/passwordAndSecurity/alternativeEmail.js"></script>
+            <script src="scripts/controllers/passwordAndSecurity/cellphone.js"></script>
+            <script src="scripts/controllers/passwordAndSecurity/password.js"></script>
+            <script src="scripts/controllers/passwordAndSecurity/securityQuestions.js"></script>
+            <script src="scripts/controllers/passwordAndSecurity/PasswordAndSecurity.look.js"></script>
+
+            <!-- Quitação de débito -->
+            <script src="scripts/controllers/quittance/quittance.js"></script>
+            <script src="scripts/controllers/quittance/quittanceConclusion.js"></script>
+            <script src="scripts/controllers/quittance/creditCard.js"></script>
+            <script src="scripts/controllers/quittance/booklet.js"></script>
+            <script src="scripts/controllers/quittance/generateBooklet.js"></script>
+            <script src="scripts/controllers/quittance/Quittance.look.js"></script>
+
+            <!-- Alteração de meio de pagamento -->
+            <script src="scripts/controllers/updatePaymentMethod/updatePaymentMethod.js"></script>
+            <script src="scripts/controllers/updatePaymentMethod/updatePaymentMethodConclusion.js"></script>
+            <script src="scripts/controllers/updatePaymentMethod/updatePaymentMethodBooklet.js"></script>
+            <script src="scripts/controllers/updatePaymentMethod/updatePaymentMethodCreditCard.js"></script>
+            <script src="scripts/controllers/updatePaymentMethod/updatePaymentMethodAccountDebit.js"></script>
+            <script src="scripts/controllers/updatePaymentMethod/UpdatePaymentMethod.look.js"></script>
+
+            <!-- Wrapper -->
+            <script src="scripts/controllers/wrapper/wrapper.js"></script>
+            <script src="scripts/controllers/wrapper/Wrapper.look.js"></script>
+            <!-- endbuild -->
+
+            <!-- Senha forte -->
+            <script src="https://jsuol.com.br/bk/cadastro/validation/desPassword.js?debug=true&version=7&cachSlayer=2"></script>
+
+        </div>
+
+        <div id="footer" ng-controller="footerCtrl" class="footer visibilityClass{{Footer.FooterMenu.config.visible}}" >
+            <div class="colorHrBottom container-fluid fadeSac" ng-controller="colorHrCtrl" ng-show="colorHrLook.bottom.isVisible" ng-style="colorHrLook.bottom.css" ></div>
+            [[> views/includes/menuFooter.inc ]]
+            [[> views/includes/footer.inc ]]
+        </div>
+
+        [[> views/includes/dynamicalyAddStaticFilesOnBottom.inc ]]
+
+        <script type="text/javascript">
+            [[> camaleonBridge.js ]]
+            document.domain = 'uol.com.br'; // Seta o domínio compartilhado para o cadastro ser interligado via iFrame
+        </script>
+
+    </body>
+  </head>
+</html>

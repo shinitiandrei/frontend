@@ -1,0 +1,160 @@
+{{=[[ ]]=}}
+<section ng-controller="cellphoneCtrl">
+	<!-- Contact Information Cellphone Info -->
+	<section id="contactInformationCellphoneInfo" ng-class="{inactive: $parent.hide == 'contactInformationCellphoneInfo'}">
+        <div class="container">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-24 col-sm-6 col-md-6 col-lg-6">Telefone celular</div>
+
+                    <div class="col-xs-24 col-sm-18 col-md-18 col-lg-18" ng-show="$parent.preloader">
+                        <div class="alert alert-sm alert-loader alert-loader-box"></div>
+                    </div>
+
+                    <div class="col-xs-24 col-sm-18 col-md-18 col-lg-18" ng-show="!$parent.preloader">
+                        <div ng-show="registered">
+                            <strong>{{cellphoneLabel}}</strong> - <a href="" ng-click="$parent.show = 'contactInformationCellphoneEdit' ;  $parent.hide='contactInformationCellphoneInfo'">editar</a>
+                            <div ng-show='cellPhoneStatus == "ACTIVE"'>
+                                <div class="alert alert-sm alert-success">
+                                    <p>Confirmado</p>
+                                </div>
+                            </div>
+                            <div ng-show='cellPhoneStatus == "NOT_CONFIRMED"'>
+                                <div class="alert alert-sm alert-warning">
+                                    <p>N&atilde;o confirmado - <a href="" ng-click="$parent.show = 'contactInformationInsertToken' ; $parent.hide='contactInformationCellphoneInfo'">confirmar celular</a></p>
+                                </div>
+                            </div>
+                            <div ng-show='cellPhoneStatus == "PENDING"'>
+                                <div class="alert alert-sm alert-warning">
+                                    <p>Aguardando confirma&ccedil;&atilde;o - <a href="" ng-click="$parent.show = 'contactInformationInsertToken' ; $parent.hide='contactInformationCellphoneInfo'">confirmar celular</a></p>
+                                </div>
+                            </div>
+                            <div class="row" ng-show='cellPhoneStatus == "ACTIVE"'>
+                                <hr>
+                                <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+                                    <label><input type="checkbox" ng-model="smsAuthorization" ng-checked="smsAuthorization"> Autorizo receber mensagens com ofertas de produtos e servi&ccedil;os UOL no celular cadastrado.</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-hide="registered">
+                            <div class="alert alert-sm alert-warning">
+                                <p>Nenhum telefone cadastrado - <a href="" ng-click="$parent.show = 'contactInformationCellphoneEdit' ; $parent.hide='contactInformationCellphoneInfo'">cadastrar</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
+
+    <!-- Contact Information Cellphone Edit -->
+    <section id="contactInformationCellphoneEdit" ng-class="{active: $parent.show == 'contactInformationCellphoneEdit'}" class="inactive">
+        <div class="container">
+            <div class="form-group">
+                <div class="bgRecoveryBox">
+                    <h5 class="col-xs-24 col-sm-24 col-md-24 col-lg-24">Telefone celular</h5>
+                    <form ng-submit="cellphone.change()">
+                        <div class="row">
+                            <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+                                <p>Caso voc&ecirc; esque&ccedil;a a senha, usaremos o telefone cadastrado como aux&iacute;lio para recuperar o seu acesso.<br>Enviaremos um c&oacute;digo SMS para o n&uacute;mero cadastrado para confirmar o telefone.</p>
+                                <div sac-multiple-input helpblockclass="'col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right'" name="'cellphoneMultiple'" field="cellphoneMultiple" optionlist="cellphoneInput"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+                                <label><input type="checkbox" ng-model="smsAuthorization" ng-checked="smsAuthorization"> Autorizo receber mensagens com ofertas de produtos e servi&ccedil;os UOL no celular cadastrado.</label>
+                                <br><br>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 h-padding-only-right-5">
+                                <button class="btn btn-block btn-primary">Avan&ccedil;ar</button>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 h-padding-only-left-5">
+                                <button class="btn btn-block btn-default" type="button" ng-click="$parent.show = 'contactInformationCellphoneInfo' ;  $parent.hide='contactInformationCellphoneEdit'">Cancelar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
+
+    <!-- Contact Information Send SMS -->
+    <section id="contactInformationSendSms" ng-class="{active: $parent.show == 'contactInformationSendSms'}" class="inactive">
+        <div class="container">
+            <div class="form-group">
+                <div class="bgRecoveryBox">
+                    <h5 class="col-xs-24 col-sm-24 col-md-24 col-lg-24">Telefone celular</h5>
+                    <form ng-submit="sms.send()">
+                        <div class="row">
+                            <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+                                <div class="alert alert-sm alert-warning">
+                                    <p><strong>Confirme o celular Informado</strong></br>Para confirmarmos que seu celular &eacute; v&aacute;lido, enviaremos um SMS com um c&oacute;digo para:<br/>
+                                    <strong>{{cellphoneLabel}}</strong> - <a href="" ng-click="$parent.show = 'contactInformationCellphoneEdit' ; $parent.hide='contactInformationCellphoneInfo'">editar</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-5 col-md-4 col-lg-4 h-padding-only-right-5">
+                                <button class="btn btn-block btn-primary">Receber c&oacute;digo</button>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 h-padding-only-left-5">
+                                <button class="btn btn-block btn-default" type="button" ng-click="$parent.show = 'contactInformationCellphoneInfo' ; $parent.hide='contactInformationInsertToken'">Cancelar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
+
+    <!-- Contact Information Insert Token -->
+    <section id="contactInformationInsertToken" ng-class="{active: $parent.show == 'contactInformationInsertToken'}" class="inactive">
+        <div class="container">
+            <div class="form-group">
+                <div class="bgRecoveryBox">
+                    <h5 class="col-xs-24 col-sm-24 col-md-24 col-lg-24">Telefone celular</h5>
+                    <form ng-submit="token.insert()">
+                        <div class="row">
+                            <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+                                <p>Insira o c&oacute;digo do SMS que enviamos ao seu numero de telefone para confirm&aacute;-lo.<br/>
+                                O SMS pode levar at&eacute; <strong>15 minutos</strong> para chegar ao seu celular.</p>
+                                <label>C&oacute;digo de confirma&ccedil;&atilde;o</label>
+                                <div sac-input helpblockclass="'col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right'" inputclass="'col-xs-24 col-sm-8 col-md-4 col-lg-4 no-padding-left no-padding-right'"  type="'text'" name="'token'" field="token" placeholder="'Token'" ></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 h-padding-only-right-5">
+                                <button class="btn btn-block btn-primary">Confirmar</button>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 h-padding-only-left-5">
+                                <button class="btn btn-block btn-default" type="button" ng-click="$parent.show = 'contactInformationCellphoneInfo' ; $parent.hide='contactInformationInsertToken'">Cancelar</button><br/><br/>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="row">
+                        <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+                            <hr class="hrWhite no-margin-top">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+                            <p class="no-margin-bottom">N&atilde;o recebeu o SMS? <a href="" ng-click="sms.sendAgain()">Reenviar c&oacute;digo</a></p>
+                            <div class="row h-margin-10 fadeOutSac" ng-show="notifyBelow">
+                                <div class="alert alert-sm alert-{{notifyBelowType}}">
+                                    <p>{{notifyBelowMessage}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
+
+</section>

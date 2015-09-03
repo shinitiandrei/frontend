@@ -1,0 +1,57 @@
+{{=[[ ]]=}}
+<section ng-controller="emailCtrl">
+	<!-- Access Information Email Info -->
+	<section id="accessInformationEmailInfo" ng-class="{inactive: $parent.hide == 'accessInformationEmailInfo'}">
+		<div class="container">
+			<div class="form-group v-margin-10">
+				<div class="row">
+					<div class="col-xs-24 col-sm-6 col-md-6 col-lg-6">E-mail</div>
+					<div class="col-xs-24 col-sm-18 col-md-18 col-lg-18">
+						<strong>{{emailLabel}}</strong><span ng-hide="edited"> - <a href="" ng-click="$parent.show = 'accessInformationEmailEdit' ; $parent.hide='accessInformationEmailInfo'">editar</a></span>
+						<div ng-show="showStatusSuccess" class="alert alert-sm alert-success fadeOutSac">
+                            <p>Enviamos uma mensagem para seu e-mail. Para fazer a troca de endere&ccedil;o siga as instru&ccedil;&otilde;es de altera&ccedil;&atilde;o.</p>
+                        </div>
+                        <div ng-show="showStatusLoading" class="alert alert-sm alert-loader alert-loader-box fadeOutSac">
+                            <p>Enviando novo e-mail com as instru&ccedil;&otilde;es de altera&ccedil;&atilde;o.</p>
+                        </div>
+                        <div ng-show="showStatusWaitingConfirmation">
+                        	<br>
+                        	<span>meunovoemail@provedor.com.br</span>
+                        	<div class="alert alert-sm alert-warning fadeOutSac">
+                        		<p>Aguardando confirma&ccedil;&atilde;o - <a href="" ng-click="email.requestInstructions()">reenviar email</a></p>
+                        	</div>
+                        </div>
+					</div>
+				</div>
+			</div>
+			<hr>
+		</div>
+	</section>
+
+	<!-- Access Information Email Edit -->
+	<section id="accessInformationEmailEdit" ng-class="{active: $parent.show == 'accessInformationEmailEdit'}" class="inactive">
+		<div class="container">
+			<div class="form-group">
+                <div class="bgRecoveryBox">
+                	<h5 class="col-xs-24 col-sm-24 col-md-24 col-lg-24">E-mail</h5>
+                	<form ng-submit="email.requestInstructions()">
+                		<div class="row">
+                			<div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+                				<p>Para mudar o e-mail de acesso, solicite as instru&ccedil;&otilde;es. Elas ser&atilde;o enviadas para <strong>{{emailLabel}}</strong></p>
+                			</div>
+                		</div>
+                        <div class="row">
+                            <div class="col-xs-24 col-sm-6 col-md-5 col-lg-5 v-padding-only-bottom-10">
+                                <button class="btn btn-block btn-primary">Solicitar instru&ccedil;&otilde;es</button>
+                            </div>
+                            <div class="col-xs-24 col-sm-4 col-md-3 col-lg-3">
+                                <button class="btn btn-block btn-default" type="button" ng-click="$parent.show = 'accessInformationEmailInfo' ; $parent.hide='accessInformationEmailEdit'">Cancelar</button>
+                            </div>
+                        </div>
+                	</form>
+                </div>
+            </div>
+            <hr>
+		</div>
+	</section>
+</section>

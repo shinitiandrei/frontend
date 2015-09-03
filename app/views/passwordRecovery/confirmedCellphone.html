@@ -1,0 +1,36 @@
+{{=[[ ]]=}}
+<section id="passwordRecovery" ng-class="{ 'no-margin-top v-margin-only-bottom-30' : Notify.getAllNotifies().length > 0, 'v-margin' : Notify.getAllNotifies().length == 0 }" >
+	<div class="container no-padding">
+        [[> ../includes/preloader.inc ]]
+		<div class="form-group" ng-show="!preloader" >
+
+            <h4>Esqueceu sua senha?</h4>
+
+            <form ng-submit="saveRecovery()">
+
+                <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+                    <div sac-input mask="'(?9?9) ?9?9?9?9?9?9?9?9?9'" control-label="'Digite o seu celular cadastrado no UOL com o final <b>{{cellphoneMasked}}</b>, para receber um c&oacute;digo via SMS'"  inputclass="'col-xs-24 col-sm-10 col-md-5 col-lg-4 no-padding-left no-padding-right'"  type="'tel'" name="'cellphone'" field="cellphone" placeholder="'(__) _________'" ></div>
+                </div>
+
+                <div id="sac-turing-container" class="fadeSac" ></div>
+
+                <div class="row">
+
+                    <div class="col-xs-24 col-sm-6 col-md-5 col-lg-5">
+                        <div class="form-group">
+                            <button type="submit"  class="btn btn-primary btn-block"  id="submitConfirmedCellphone" click-once click-once-validate="validate" >Solicitar c&oacute;digo</button>
+                        </div>
+                    </div>
+                    <div class="col-xs-24 col-sm-6 col-md-5 col-lg-5">
+                        <div class="form-group">
+                            <button type="button" ng-click="nextStep()" click-once class="btn btn-default btn-block" >N&atilde;o utilizar este celular</button>
+                        </div>
+                    </div>
+
+                </div>
+
+			</form>
+
+		</div>
+	</div>
+</section>

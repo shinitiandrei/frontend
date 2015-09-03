@@ -1,0 +1,241 @@
+{{=[[ ]]=}}
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>templates</groupId>
+    <artifactId>sac-template-[[camaleao.tabs.pom.artifactId.value]]</artifactId>
+    <packaging>pom</packaging>
+    <version>[[camaleao.tabs.pom.version.value]]</version>
+    <distributionManagement>
+        <repository>
+            <id>uol</id>
+            <name>UOL - Repositorio interno</name>
+            <url>dav:https://upload.mvn.repo.intranet/uol</url>
+        </repository>
+        <snapshotRepository>
+            <id>uol</id>
+            <name>UOL - Repositorio interno</name>
+            <url>dav:https://upload.mvn.repo.intranet/uol</url>
+        </snapshotRepository>
+        <site>
+            <id>uol_site</id>
+            <url>dav:https://upload.mvn.repo.intranet/site/sac.uol.com.br/[[camaleao.tabs.pom.artifactId.value]]</url>
+        </site>
+    </distributionManagement>
+    <properties>
+        <skin.home>/export/htdocs/sac.uol.com.br/[[camaleao.tabs.pom.artifactId.value]]</skin.home>
+        <skin.name>[[camaleao.tabs.pom.artifactId.value]]</skin.name>
+    </properties>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>uol</id>
+            <name>UOL - Releases</name>
+            <url>http://mvn.repo.intranet/uol</url>
+        </pluginRepository>
+    </pluginRepositories>
+    <build>
+        <finalName>sac-template-[[camaleao.tabs.pom.artifactId.value]]</finalName>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-webdav</artifactId>
+                <version>1.0-beta-2</version>
+            </extension>
+        </extensions>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.2.2</version>
+                <executions>
+                    <execution>
+                        <id>assembly</id>
+                        <phase>package</phase>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>assembly-bin.xml</descriptor>
+                            </descriptors>
+                        </configuration>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>uol.corp.plugins</groupId>
+                <artifactId>quebec-maven-plugin</artifactId>
+                <version>1.1.11</version>
+                <executions>
+                    <execution>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>runAssembly</goal>
+                        </goals>
+                        <configuration>
+                            <projectEmail>l-scrum-odessa@uolinc.com
+                            </projectEmail>
+                            <assemblyId>package</assemblyId>
+                            <assemblyFormat>tar.gz</assemblyFormat>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <profiles>
+        <profile>
+            <id>deploy-stg</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-scm-plugin</artifactId>
+                        <version>1.0</version>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <id>upload</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <configuration>
+                                    <target>
+                                        <!-- STAGE 1 -->
+                                        <echo message="Iniciando entrega do pacote no servidor ${deploy.instance.1}" />
+
+                                        <echo message="Removendo o conteudo do diretorio ${skin.home}" />
+                                        <sshexec trust="true" host="${deploy.instance.1}" username="${deploy.user}" password="${deploy.pass}" command="sudo rm -rf ${skin.home}/*" />
+
+                                        <echo message="Copiando o arquivo /var/lib/jenkins/jobs/sac-template-deploy-stg/workspace/.tmp/.tmpReady/sac-metatemplate/target/${deploy.build}" />
+                                        <scp trust="true" file="/var/lib/jenkins/jobs/sac-template-deploy-stg/workspace/.tmp/.tmpReady/sac-metatemplate/target/${deploy.build}" remoteTofile="${deploy.user}:${deploy.pass}@${deploy.instance.1}:/home/${deploy.user}/tmp/" />
+
+                                        <echo message="Instalando pacote /home/${deploy.user}/tmp/${deploy.build}" />
+                                        <sshexec trust="true" host="${deploy.instance.1}" username="${deploy.user}" password="${deploy.pass}" command="sudo tar -zxvf /home/${deploy.user}/tmp/${deploy.build} -C /"  />
+
+                                        <echo message="Entrega Realizada na ${deploy.instance.1}!!!" />
+
+                                        <!-- STAGE 2 -->
+                                        <echo message="Iniciando entrega do pacote no servidor ${deploy.instance.2}" />
+
+                                        <echo message="Removendo o conteudo do diretorio ${skin.home}" />
+                                        <sshexec trust="true" host="${deploy.instance.2}" username="${deploy.user}" password="${deploy.pass}" command="sudo rm -rf ${skin.home}/*" />
+
+                                        <echo message="Copiando o arquivo /var/lib/jenkins/jobs/sac-template-deploy-stg/workspace/.tmp/.tmpReady/sac-metatemplate/target/${deploy.build}" />
+                                        <scp trust="true" file="/var/lib/jenkins/jobs/sac-template-deploy-stg/workspace/.tmp/.tmpReady/sac-metatemplate/target/${deploy.build}" remoteTofile="${deploy.user}:${deploy.pass}@${deploy.instance.2}:/home/${deploy.user}/tmp/" />
+
+                                        <echo message="Instalando pacote /home/${deploy.user}/tmp/${deploy.build}" />
+                                        <sshexec trust="true" host="${deploy.instance.2}" username="${deploy.user}" password="${deploy.pass}" command="sudo tar -zxvf /home/${deploy.user}/tmp/${deploy.build} -C /"  />
+
+                                        <echo message="Entrega Realizada na ${deploy.instance.2}!!!" />
+
+
+                                    </target>
+                                </configuration>
+                            </execution>
+                        </executions>
+                        <dependencies>
+                            <dependency>
+                                <groupId>org.apache.ant</groupId>
+                                <artifactId>ant-jsch</artifactId>
+                                <version>1.8.1</version>
+                            </dependency>
+                            <dependency>
+                                <groupId>com.jcraft</groupId>
+                                <artifactId>jsch</artifactId>
+                                <version>0.1.50</version>
+                            </dependency>
+                        </dependencies>
+                    </plugin>
+                </plugins>
+            </build>
+            <properties>
+                <deploy.user>jenkins</deploy.user>
+                <deploy.pass>jenkins</deploy.pass>
+                <deploy.build>${project.artifactId}-package.tar.gz</deploy.build>
+                <deploy.instance.1>d3-hubble-stg1</deploy.instance.1>
+                <deploy.instance.2>d3-hubble-stg2</deploy.instance.2>
+            </properties>
+        </profile>
+
+         <profile>
+            <id>deploy-qa</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <id>upload</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <configuration>
+                                    <target>
+                                        <!-- INTEGRACAO -->
+                                        <echo message="Iniciando entrega do pacote no servidor ${deploy.instance}" />
+
+                                        <echo message="Removendo pacote UOL${project.artifactId} do diretorio /home/${deploy.user}" />
+                                        <sshexec trust="true" host="${deploy.instance}" username="${deploy.user}" password="${deploy.pass}" command="sudo rm -rf /home/${deploy.user}/UOL${project.artifactId}*" />
+
+                                        <echo message="Baixando o arquivo rpm ${project.artifactId}-${project.version} para o servidor ${deploy.instance}" />
+                                        <sshexec trust="true" host="${deploy.instance}" username="${deploy.user}" password="${deploy.pass}" command="sudo wget http://rpm.repo.intranet/so-centos/5.4/centos54_uol//noarch/UOL${project.artifactId}-${project.version}-1.noarch.rpm" />
+
+                                        <echo message="Executando rpm -Uvh do arquivo ${project.artifactId}-${project.version}" />
+                                        <sshexec trust="true" host="${deploy.instance}" username="${deploy.user}" password="${deploy.pass}" command="sudo rpm -Uvh UOL${project.artifactId}-${project.version}-1.noarch.rpm" />
+
+                                        <echo message="Entrega Realizada na ${deploy.instance}!!!" />
+
+                                        <!-- QUALIDADE 1 -->
+                                        <echo message="Iniciando entrega do pacote no servidor ${deploy.qa.instance.1}" />
+
+                                        <echo message="Removendo pacote UOL${project.artifactId} do diretorio /home/${deploy.user}" />
+                                        <sshexec trust="true" host="${deploy.qa.instance.1}" username="${deploy.user}" password="${deploy.pass}" command="sudo rm -rf /home/${deploy.user}/UOL${project.artifactId}*" />
+
+                                        <echo message="Baixando o arquivo rpm ${project.artifactId}-${project.version} para o servidor ${deploy.qa.instance.1}" />
+                                        <sshexec trust="true" host="${deploy.qa.instance.1}" username="${deploy.user}" password="${deploy.pass}" command="sudo wget http://rpm.repo.intranet/so-centos/5.4/centos54_uol//noarch/UOL${project.artifactId}-${project.version}-1.noarch.rpm" />
+
+                                        <echo message="Executando rpm -Uvh do arquivo ${project.artifactId}-${project.version}" />
+                                        <sshexec trust="true" host="${deploy.qa.instance.1}" username="${deploy.user}" password="${deploy.pass}" command="sudo rpm -Uvh UOL${project.artifactId}-${project.version}-1.noarch.rpm" />
+
+                                        <echo message="Entrega Realizada no servidor ${deploy.qa.instance.1}!!!" />
+                                    </target>
+                                </configuration>
+                            </execution>
+                        </executions>
+                        <dependencies>
+                            <dependency>
+                                <groupId>org.apache.ant</groupId>
+                                <artifactId>ant-jsch</artifactId>
+                                <version>1.8.1</version>
+                            </dependency>
+                            <dependency>
+                                <groupId>com.jcraft</groupId>
+                                <artifactId>jsch</artifactId>
+                                <version>0.1.50</version>
+                            </dependency>
+                        </dependencies>
+                    </plugin>
+                </plugins>
+            </build>
+            <properties>
+                <deploy.user>jenkins</deploy.user>
+                <deploy.pass>jenkins</deploy.pass>
+                <deploy.instance>a1-deploycadf-s-pla1</deploy.instance>
+                <deploy.qa.instance.1>d3-hubble-qa1</deploy.qa.instance.1>
+            </properties>
+        </profile>
+    </profiles>
+
+</project>

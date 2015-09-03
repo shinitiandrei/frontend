@@ -1,0 +1,44 @@
+&.quittance {
+
+    .debtDescription{
+        font-size: 16px;
+
+        .alert-sm:before {
+            top: 1px;
+        }
+    }
+
+
+
+    .debtValue{
+        font-size: 22px;
+    }
+    .featureColor{
+        color: #e9b425;
+    }
+
+    .alert-sm {
+        padding: 9px 0px 9px 47px;
+    }
+
+    .bgRecoveryBox{
+        background-color: #f1f1f1;
+        padding: 20px 10px;
+    }
+
+    .helpblockWidth{
+        width:270px;
+    }
+
+    .checkDigitWidth{
+        width:44px;
+    }
+
+    @media not all, (max-width: $col-sm) {
+        
+        .debtDescription {
+            float:left;
+        }
+    }
+
+}

@@ -1,0 +1,68 @@
+{{=[[ ]]=}}
+<section ng-controller="nameAndCpfCtrl">
+    <!-- Personal Information Name And CPF Info -->
+    <section id="personalInformationNameAndCPFInfo" ng-class="{inactive: $parent.hide == 'personalInformationNameAndCPFInfo'}">
+        <div class="container">
+            <div class="form-group v-margin-10">
+                <div class="row">
+                    <div class="col-xs-24 col-sm-6 col-md-6 col-lg-6">Nome</div>
+                    <div class="col-xs-24 col-sm-18 col-md-18 col-lg-18">
+                        <strong>{{nameLabel}}</strong>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="form-group v-margin-10">
+                <div class="row">
+                    <div class="col-xs-24 col-sm-6 col-md-6 col-lg-6">CPF</div>
+                    <div class="col-xs-24 col-sm-18 col-md-18 col-lg-18">
+                        <div ng-show="registered">
+                            <strong>{{cpfLabel}}</strong>
+                            <div class="alert alert-sm alert-success fadeOutSac" ng-show="showStatus" >
+                                <p>CPF cadastrado</p>
+                            </div>
+                        </div>
+                        <a ng-hide="registered" href="" ng-click="$parent.show = 'personalInformationNameAndCPFRegister' ; $parent.hide='personalInformationNameAndCPFInfo'">Cadastrar CPF</a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
+
+    <!-- Personal Information Name And CPF Register -->
+    <section id="personalInformationNameAndCPFRegister" ng-class="{active: $parent.show == 'personalInformationNameAndCPFRegister'}" class="inactive">
+        <div class="container">
+            <div class="form-group">
+                <div class="bgRecoveryBox">
+                    <h5 class="col-xs-24 col-sm-24 col-md-24 col-lg-24">CPF</h5>
+                    <form ng-submit="cpf.create()">
+                        <p class="col-xs-24 col-sm-24 col-md-24 col-lg-24">Ao cadastrar um cpf verifique se o nome do titular corresponde ao que est&aacute; escrito no seu documento.</p>
+                        <div class="row">
+                            <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+                                <label>Nome do titular</label>
+                                <div sac-input helpblockclass="'col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right'" inputclass="'col-xs-24 col-sm-10 col-md-10 col-lg-10 no-padding-left no-padding-right'" type="'text'" name="'name'" field="name" placeholder="'Nome'"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+                                <label>CPF</label>
+                                <div sac-input mask="'?9?9?9.?9?9?9.?9?9?9-?9?9'" helpblockclass="'col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right'" inputclass="'col-xs-24 col-sm-5 col-md-5 col-lg-5 no-padding-left no-padding-right'" type="'text'" name="'cpf'" field="cpf" placeholder="'___.___.___-__'">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 h-padding-only-right-5">
+                                <button class="btn btn-block btn-primary ">Salvar</button>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 h-padding-only-left-5">
+                                <button class="btn btn-block btn-default" type="button" ng-click="$parent.show = 'personalInformationNameAndCPFInfo' ; $parent.hide='personalInformationNameAndCPFRegister'">Cancelar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
+</section>

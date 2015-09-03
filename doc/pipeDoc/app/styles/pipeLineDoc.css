@@ -1,0 +1,170 @@
+/* line 1, pipeLineDoc.scss */
+body {
+  margin: 0;
+  padding: 0px;
+  overflow: hidden;
+  font-size: 0.9em;
+  cursor: none;
+}
+/* line 9, pipeLineDoc.scss */
+body #mainImage {
+  position: absolute;
+  z-index: 1;
+}
+/* line 14, pipeLineDoc.scss */
+body #mainViewer {
+  width: 100%;
+  height: 240px;
+  z-index: 900;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  background: #333;
+  display: none;
+}
+/* line 25, pipeLineDoc.scss */
+body #overmask {
+  background: #111;
+  width: 100%;
+  height: 100%;
+  z-index: 1001;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.97;
+  display: none;
+}
+/* line 37, pipeLineDoc.scss */
+body #overmask #overMaskContent {
+  color: #FFF;
+  font-size: 3em;
+  font-family: arial;
+  margin: 0 20px 0 0;
+  width: 90%;
+  height: 100%;
+  text-shadow: 1px 2px #000;
+}
+/* line 47, pipeLineDoc.scss */
+body #overmask #overMaskContent #overmaskCloseButton {
+  background: url("../images/close-icon.png") transparent;
+  width: 30px;
+  height: 30px;
+  float: right;
+  cursor: pointer;
+}
+/* line 57, pipeLineDoc.scss */
+body #overmask #overMaskContent .apDivContent {
+  font-weight: normal;
+}
+/* line 61, pipeLineDoc.scss */
+body #overmask #overMaskContent .apDivContent h1 {
+  font-size: 1.2em;
+  color: orange;
+}
+/* line 66, pipeLineDoc.scss */
+body #overmask #overMaskContent .apDivContent h2 {
+  font-size: 0.9em;
+}
+/* line 70, pipeLineDoc.scss */
+body #overmask #overMaskContent .apDivContent li {
+  list-style: disc;
+  margin: 40px 0;
+  font-size: 0.7em;
+}
+/* line 76, pipeLineDoc.scss */
+body #overmask #overMaskContent .apDivContent a {
+  color: #0645AD;
+  text-shadow: none;
+  text-decoration: none;
+}
+/* line 81, pipeLineDoc.scss */
+body #overmask #overMaskContent .apDivContent a:hover, body #overmask #overMaskContent .apDivContent a:active, body #overmask #overMaskContent .apDivContent a:visited {
+  text-decoration: underline;
+  color: #0645AD;
+  text-shadow: none;
+}
+/* line 89, pipeLineDoc.scss */
+body #overmask #overMaskContent .apDivContent b {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #F1DC51;
+}
+/* line 94, pipeLineDoc.scss */
+body #overmask #overMaskContent .apDivContent b.green {
+  color: green;
+}
+/* line 99, pipeLineDoc.scss */
+body #overmask #overMaskContent .apDivContent aside {
+  font-size: 0.4em;
+  float: right;
+  min-width: 200px;
+  min-height: 200px;
+  background: #333;
+  padding: 20px;
+  margin: 0 5px;
+}
+/* line 109, pipeLineDoc.scss */
+body #overmask #overMaskContent .apDivContent pre {
+  font-family: Consolas,monospace;
+  font-size: 0.7em;
+}
+/* line 114, pipeLineDoc.scss */
+body #overmask #overMaskContent .apDivContent .smallText {
+  font-size: 0.56em;
+  margin: 5px;
+}
+/* line 119, pipeLineDoc.scss */
+body #overmask #overMaskContent .apDivContent .smallText b {
+  font-size: 1em;
+}
+/* line 132, pipeLineDoc.scss */
+body #mainItens {
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  position: absolute;
+}
+/* line 139, pipeLineDoc.scss */
+body #mainItens .apView {
+  display: none;
+}
+/* line 143, pipeLineDoc.scss */
+body #mainItens .apDiv {
+  position: absolute;
+  cursor: pointer;
+  overflow: hidden;
+  text-indent: -9999px;
+  white-space: nowrap;
+  border: none;
+}
+/* line 151, pipeLineDoc.scss */
+body #mainItens .apDiv .apDivContent {
+  display: none;
+}
+/* line 155, pipeLineDoc.scss */
+body #mainItens .apDiv:hover, body #mainItens .apDiv.apDivActive {
+  border: 1px dashed orange;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  -webkit-box-shadow: 1px 3px 7px 2px orange;
+  box-shadow: 1px 3px 7px 2px orange;
+  -webkit-transition: all 100ms ease-in;
+  -moz-transition: all 100ms ease-in;
+  -ms-transition: all 100ms ease-in;
+  -o-transition: all 100ms ease-in;
+  transition: all 100ms ease-in;
+}
+/* line 169, pipeLineDoc.scss */
+body #mainItens .apDiv.apDivInactive:hover {
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+/* line 181, pipeLineDoc.scss */
+body label {
+  display: inline-block;
+  width: 5em;
+}

@@ -1,0 +1,583 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>UOL SAC - INFRA INTERFACE</title>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/pipeLineDoc.css">
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/jqueryui.css">
+    <link rel="SHORTCUT ICON" href="http://h.imguol.com/favicon.ico" />
+
+    <script src="scripts/jquery.js" ></script>
+    <script src="scripts/jqueryui.js" ></script>
+    <script src="scripts/mousewheel.js" ></script>
+    <script src="scripts/main.js" ></script>
+  </head>
+  <body>
+
+  <div id="mainItens">
+
+      <div class="apDiv" title="Desenvolvimento Local" id="apDiv1">
+          <div class="apDivContent" >
+            <h1>Desenvolvimento Local</h1> <br />
+            <h2>Principais características:</h2> <br />
+            <ul>
+              <li>Aplicação independente do backend e de ambientes de staging e QA, permite desenvolver utilizando contratos e mocks locais</li>
+              <li><b>Live reload</b> provendo refreshs automáticos no browser ao salvar arquivos</li>
+              <li>Desenvolvida com Angular, Bootstrap, Mustache e utiliza os Ciclos de Vida do Node.js</li>
+            </ul>
+          </div>
+      </div>
+
+      <div class="apDiv" title="Git UOL - SAC-templates" id="apDiv2">
+        <div class="apDivContent" >
+            <h1>Repositório Principal do Projeto</h1> <br />
+            <ul>
+              <li>Disponível no endereço: <a href="https://gituol.intranet/plataforma/sac/sac-templates.git" target="_BLANK" >https://gituol.intranet/plataforma/sac/sac-templates.git</a> </li>
+              <li>Entrega independente dos binários e do antigo sync do svn <b>_templates</b> com os ambientes Base e Staging.</li>
+              <li>Os commits na branch <b>development</b> iniciam o fluxo de integração contínua, gerenciado pelo Jenkins.</li>
+              <li>A branch <b>Master</b> deve ser evitada, pois apenas o Jenkins deve commitar nela após executar testes, controle de qualidade e garantir o build.</li>
+            </ul>
+          </div>
+      </div>
+
+      <div class="apDiv" title="Node.js - Java Script com Super Poderes" id="apDiv3">
+        <div class="apDivContent" >
+          <h1>Node JS</h1> <br />
+          Adotado como principal linguagem de <b>suporte</b> ao desenvolvimento. <br />
+          <ul>
+            <li>Familiaridade dos desenvolvedores de interface com Java Script e baixa curva de adaptação para desenvolvedores JAVA</li>
+            <li>Portabilidade - suporte multiplataforma </li>
+            <li>Vasta comunidade e API em estado avançado de desenvolvimento.</li>
+            <li>Gestão de dependência via repositórios do npm.</li>
+            <li>Capacidade subir servidores locais, com suporte a websockets permitindo o Live Reload.</li>
+            <li>Site oficial: <a href="http://nodejs.org/" target="_blank" >http://nodejs.org</a></li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="apDiv" title="Grunt Server: o executor de tarefas" id="apDiv4">
+        <div class="apDivContent" >
+          <h1>Grunt</h1> <br />
+          <ul>
+            <li>Módulo do Node.js responsável por gerenciar as tarefas de suporte ao desenvolvimento, usualmenteas que ninguém gosta de fazer e passasm despercebido no dia a dia, como minificar dependências, executar testes unitários e verificar a qualidade do código. </li>
+            <li>Site oficial: <a href="http://gruntjs.com/" target="_blank" >http://gruntjs.com/</a></li>
+            <li>Todas tarefas a seguir são executadas pelo Grunt, tanto no ambiente local como pelo Jenkins:</li>
+          </ul>
+        </div>
+      </div>
+
+
+
+      <div class="apDiv" title="Bower: gerenciador de dependências via Git" id="apDiv5">
+        <div class="apDivContent" >
+          <h1>Bower: gerenciador de dependências via Git</h1> <br />
+          <ul>
+            <li>Solução para a gestão de pacotes de dependências de front-end como Angular, Jquery, BootStrap e outros.</li>
+            <li>Possibilita versionamento de dependências de forma automática. (Pegar sempre a mais recente).</li>
+            <li>Funciona integrado com o Git.</li>
+            <li>Produzido pela equipe do Twitter, mesma do BootStrap.</li>
+            <li>Open source</li>
+            <li>Uso massivo pela comunidade e documentação representativa.</li>
+            <li>Site oficial: <a href="http://bower.io/" target="_blank" >http://bower.io/</a></li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="apDiv" title="Compass & SASS: précompiladores de estilo" id="apDiv6">
+        <div class="apDivContent" >
+          <h1>SASS & Compass: CSS com superpoderes</h1> <br />
+          <aside>
+            Exemplo de <b>SASS</b> semântico:<br /><br />
+            <pre>
+$var: "value";
+
+body {
+
+    regra : $var;
+
+    classe {
+
+        regra : $var;
+
+        a {
+          regra : $var;
+        }
+
+    }
+}
+            </pre>
+          </aside>
+
+          <aside>
+            Exemplo de <b>CSS</b> semântico:<br /><br />
+            <pre>
+body {
+    regra : valor;
+}
+    body .classe {
+      regra : valor;
+    }
+
+    body .classe a {
+        regra : valor;
+    }
+            </pre>
+          </aside>
+
+          <ul>
+            <li>Pré-compiladores de folhas de estilo (CSS)</li>
+            <li>Adiciona poder lógico à formatação.</li>
+            <li>Facilita a sintaxe semântica.</li>
+            <li>Código de desenvolvimento mais limpo e legível.</li>
+            <li>Integração com o Camaleão parseando variáveis.</li>
+            <li>Open source</li>
+            <li>Powered by Ruby on Rails</li>
+          </ul>
+
+        </div>
+      </div>
+
+
+      <div class="apDiv" title="Testes Unitários com Jasmine" id="apDiv7">
+        <div class="apDivContent" >
+          <h1>Jasmine</h1> <br />
+          <aside>
+            Exemplo de <b>Teste</b> com jasmine:<br /><br />
+            <pre>
+  describe("Uma suite", function() {
+
+      it("Um teste", function() {
+        expect(true).toBe(true);
+      });
+
+      it("Outro teste", function() {
+        expect(false).toBe(false);
+      });
+
+  });
+            </pre>
+          </aside>
+          <ul>
+            <li>Framework de testes unitários para Javascript</li>
+            <li>Suporta todos os browsers homologados pelo UOL atualmente.</li>
+            <li>Os testes descritos em Jasmine são executados pelo <b>Karma</b>, um executor de testes criado pela mesma equipe do Angular, capaz de executar os testes no Jenkins e durante o desenvolvimento.</li>
+            <li>Capaz de injetar mocks e substituir respostas de serviços durante os testes.</li>
+            <li>Open source</li>
+            <li>Site oficial: <a href="http://jasmine.github.io/" target="_blank" >http://jasmine.github.io/</a></li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="apDiv" title="Controle de qualidade da codificação" id="apDiv8">
+        <div class="apDivContent" >
+          <h1>JsHint</h1>
+          <ul>
+            <li>Controle de qualidade da codificação, inicialmente adotadas as aderências:</li>
+            <li class="smallText" ><b>browser:</b> verifica se não foram usadas variáveis globais que conflitam com Objetos nativos da maioria dos browsers atuais, como 'document'</li>
+            <li class="smallText" ><b>esnext:</b>  Aderência à sintaxe do ECMAScript 6</li>
+            <li class="smallText" ><b>bitwise:</b>  Proíbe o uso de operadores simplificados, como & no lugar de && </li>
+            <li class="smallText" ><b>camelcase:</b>  Força o uso de CamelCase para métodos e UPPER_CASE para constantes</li>
+            <li class="smallText" ><b>curly:</b>  Requer o uso de Chaves em Loopings e Condições, para melhorar e legibilidade</li>
+            <li class="smallText" ><b>eqeqeq:</b>  Obriga o uso de deep equall, === no lugar de == em condições. </li>
+            <li class="smallText" ><b>immed:</b> Proíbe a chamada de funções sem parenteses para diferenciar métodos de objetos</li>
+            <li class="smallText" ><b>indent:</b> Checa se toda a identação está baseada em 4 espaços.</li>
+            <li class="smallText" ><b>latedef:</b>  Proíbe o uso de variáveis que ainda não foram definidas.</li>
+            <li class="smallText" ><b>newcap:</b>  Requer que objetos construtores sejam sempre nomeados como Classes, que são capitalizadas </li>
+            <li class="smallText" ><b>noarg:</b>  Não permite utilizar arguments.caller, forma de chamar métodos retirada desde o  ECMAScript 5</li>
+            <li class="smallText" ><b>quotmark:</b> Permite apenas o uso de aspas simples, para facilitar a adição de HTMl em strings, que geralmente tem aspas duplas </li>
+            <li class="smallText" ><b>regexp:</b>  Evita regex inseguras com ^ </li>
+            <li class="smallText" ><b>undef:</b>  Proíbe o uso de variáveis indefinidas</li>
+            <li class="smallText" ><b>unused:</b> Não permite que variáveis sejam declaradas, porém nunca usadas. </li>
+            <li class="smallText" ><b>strict:</b>  Força o encapsulamento do código com a definição inicial 'use strict';</li>
+            <li class="smallText" ><b>trailing:</b> Não permite que sejam deixados espaços em branco desnecessários</li>
+            <li class="smallText" ><b>smarttabs:</b> Enibe os avisos quando são usados tabs e espaços misturados para alinhamento.</li>
+            <li class="smallText" ><b>globals:</b> Põe o angular e o jquery como variáveis globais permitidas. </li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="apDiv" title="Camaleão: evoluído para suportar single page apps" id="apDiv9">
+        <div class="apDivContent" >
+          <h1>Camaleão / Mustache</h1>
+
+          <aside style="width:400px;">
+            Exemplo de uso <b>notParsableRegex</b> no setup.json, excluindo toda a pasta scripts<br /><br />
+            <pre>"notParsableRegex" : "(.*)(\\\\|\\/)scripts(\\\\|\\/)(.*)"</pre>
+
+            <br /><br />Exemplo de uso <b>parsableRegex</b> no setup.json, pegando toda a pasta scripts<br /><br />
+            <pre>"parsableRegex" : "(.*)(\\\\|\\/)scripts(\\\\|\\/)(.*)"</pre>
+
+            <br /><br />Exemplo de uso <b>extensions</b> no setup.json, pegando todas as extensões<br /><br />
+            <pre>"extensions" : "*"</pre>
+
+          </aside>
+
+          <ul>
+            <li>O Camaleão foi evoluído para também copiar arquivos, sem passar pelo parser do Mustache previamente.
+              <br><br>Com isso viabilizou-se o desenvolvimento de Meta-Templates totalmente auto-contidos, característica importante para que possam ser distribuídas novas versões independentes e que não quebram versões anteriores e/ou de outros produtos.
+              <br><br>Foram Incluídos os novos filtros no Camaleão: </li>
+              <li>extensions - filtra, <b>inclusivamente</b> por extensões, os arquivos que serão gravados</li>
+              <li>parsableRegex - filtra arquivos e diretórios <b>inclusivamente</b> via Regex</li>
+              <li>notParsableRegex - filtra arquivos e diretórios <b>exclusivamente</b> via Regex</li>
+          </ul>
+
+        </div>
+      </div>
+
+
+      <div class="apDiv" title="Angular + Bootstrap App" id="apDiv10">
+        <div class="apDivContent" >
+          <h1>Angular + Bootstrap App</h1> <br />
+          <ul>
+            <li>Single Page App </li>
+            <li>Responsividade com suporte até o ie8 utilizando o <b>respond.js</b> </li>
+            <li>Futura integração com o Bootstrap Corporativo</li>
+            <li>Aplicação híbrida: Possibilidade de distribuição na App Store, Google Play e Windows Store via XDK ou similares</li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="apDiv" title="Chrome Canaryum" id="apDiv11" >
+        <div class="apDivContent" >
+          <h1>Chrome Canaryum</h1> <br />
+          <ul>
+            <li>Batarang - Debug preciso do Angular</li>
+            <li>Responsive Tests</li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="apDiv" title="Jenkins" id="apDiv12">
+        <div class="apDivContent" >
+          <h1>Ambiente de integração contínua: Jenkins</h1>
+          <ul>
+            <li>O primeiro <b>gatilho</b> está vinculado aos commits na brach development do git: plataforma/sac/sac-templates</li>
+            <li>Pipeline disponível em: <a href="http://a1-integcadf-s-pla1:8080/jenkins/view/SAC-Template-Pipeline/" target="_blank" >http://a1-integcadf-s-pla1:8080/jenkins/view/SAC-Template-Pipeline/</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="apDiv" title="Git: development" id="apDiv13">
+        <div class="apDivContent" >
+        <h1>Branch Development</h1>
+          <ul>
+            <li>Durante o desenvolvimento, deve ser criada uma branch local que pode ser nomeada de acordo com sprints, histórias ou hotfixes, sempre com o prefixo sac-templates. </li>
+            <li>O merge com a branch <b>desenvolvimento</b> iniciará o Pipeline a seguir.</li>
+            <li>Atenção: para garantir a integridade do projeto, a branch <b>Master</b> que representa o ambiente de produção, só deve ser mergeada automaticamente pelo Jenkis no final do Pipeline.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="apDiv" title="Build inicial" id="apDiv14">
+        <div class="apDivContent" >
+        <h1>initial-dev - build inicial do projeto.</h1>
+          <ul>
+            <li>Configura o node para baixar as dependências via <b>http</b> no lugar de <b>https</b>, para que o a máquina de Proxy do ambiente de integração refaça a conversão para https novamente depois.</li>
+            <li>Instala as dependências do <b>Node.js</b> via npm install.</li>
+            <li>Instala as dependências do projeto em sí como Angular, jQuery e Bootstrap, gerenciadas pelo <b>Bower</b>.</li>
+            <li>
+              <b>Gatilho</b> &gt; <b class="green" >push</b> na branch development<br />
+              <b>Feedback</b> &lt; via e-mail em caso de falha no build<br />
+              <b>Strenght:</b> interrompe o Pipeline em caso de falha
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="apDiv" title="unit-test-dev" id="apDiv15">
+        <div class="apDivContent" >
+          <h1>unit-test-dev - Testes unitários via Karma</h1>
+          <ul>
+            <li>Roda todos as suítes de testes unitários do projeto.</li>
+            <li>Gatilho &gt; <b class="green" >sucesso</b> da etapa anterior de build</li>
+            <li>Feedback &lt; via e-mail em caso de quebra nos testes</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="apDiv" title="code-quality-dev" id="apDiv16">
+        <div class="apDivContent" >
+        <h1>code-quality-dev - JShint em ação</h1>
+          <ul>
+            <li>Verifica a aderência da qualidade de código estabelecida no arquivo .jshintrc</li>
+            <li>
+               <b>Gatilho</b> &gt; <b class="green" >sucesso</b> da etapa anterior de unit-test-dev<br />
+               <b>Feedback</b> &lt; via e-mail em caso de não aderência de qualidade<br />
+               <b>Strenght:</b> interrompe o Pipeline em caso de falha
+             </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="apDiv" title="dist-dev" id="apDiv17">
+        <div class="apDivContent" >
+          <h1>dist-dev - Preparando tudo para ir pra produção</h1>
+          <ul>
+            <li>
+              Nas etapas anteriores, todos os arquivos da aplicação se mantinham separados e intactos para facilitar debugs em caso de erros.
+              <br /><br />Nessa etapa, preparamos tudo para a aplicação chegar ao ponto ideal de ir para produção.
+            </li>
+            <li>Concatena JavaScripts &gt; Minifica o JavaScript Concatenado </li>
+            <li>Compila os arquivos de SASS &gt; Concatena os arquivos compilados de CSS &gt; Minifica o arquivo concatenado de CSS</li>
+            <li>Parseia as tags de Mustache / Camaleão</li>
+            <li>Renomeia os arquivos JS e CSS finais para evitar cache</li>
+            <li>
+              <b>Gatilho</b> &gt; <b class="green" >sucesso</b> da etapa anterior de code-quality-dev<br />
+              <b>Feedback</b> &lt; via e-mail em caso de quebrar algum dos passos<br />
+              <b>Strenght:</b> interrompe o Pipeline em caso de falha
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="apDiv" title="deploy-stg" id="apDiv18">
+        <div class="apDivContent" >
+          <h1>deploy-stg</h1>
+          <ul>
+            <li>Entrega o pacote gerado sac-metatemplate... na máquina a1-hum-s-pla4.</li>
+            <li>
+              <b>Gatilho</b> &gt; <b class="green" >sucesso</b> da etapa anterior de dist-dev<br />
+              <b>Feedback</b> &lt; via e-mail em caso de falha no build<br />
+              <b>Strenght:</b> interrompe o Pipeline em caso de falha
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="apDiv" title="smoke-test-stg" id="apDiv19">
+        <div class="apDivContent" >
+          <h1>smoke-test-stg</h1>
+          <ul>
+            <li>Em construção, será implementado após o surgimento dos primeiros testes integrados de fumaça.</li>
+            <li>
+              <b>Gatilho</b> &gt; <b class="green" >sucesso</b> na entrega na máquina a1-hum-s-pla4<br />
+              <b>Feedback</b> &lt; via e-mail em caso de falha no build<br />
+              <b>Strenght:</b> interrompe o Pipeline em caso de falha
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="apDiv" title="integration-test-stg" id="apDiv20">
+        <div class="apDivContent" >
+        <h1>integration-test-stg</h1>
+          <ul>
+            <li>Em construção, será implementado após o surgimento dos primeiros testes integrados.</li>
+            <li>
+              <b>Gatilho</b> &gt; <b class="green" >sucesso</b> no teste de fumaça em staging<br />
+              <b>Feedback</b> &lt; via e-mail em caso de falha no build<br />
+              <b>Strenght:</b> interrompe o Pipeline em caso de falha
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="apDiv" title="merge-master" id="apDiv21">
+        <div class="apDivContent" >
+        <h1>merge-master</h1>
+          <ul>
+            <li>Merge com o Git master, que é a representação do ambiente de produção.</li>
+            <li>
+              <b>Gatilho</b> &gt; <b class="green" >sucesso</b> no teste de integração em staging<br />
+              <b>Feedback</b> &lt; via e-mail em caso de conflito no merge<br />
+              <b>Strenght:</b> interrompe o Pipeline em caso de falha
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="apDiv" title="initial-master" id="apDiv22">
+        <div class="apDivContent" >
+          <h1>initial-master</h1>
+          <ul>
+            <li>Build do ambientre completo, baseado nos arquivos da branch Master</li>
+            <li>
+              <b>Gatilho</b> &gt; <b class="green" >sucesso</b> no merge com a Master<br />
+              <b>Feedback</b> &lt; via e-mail em caso de falha no merge<br />
+              <b>Strenght:</b> interrompe o Pipeline em caso de falha
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="apDiv" title="unit-test-master" id="apDiv23">
+        <div class="apDivContent" >
+          <h1>unit-test-master</h1>
+          <ul>
+            <li>Testes unitários no build gerado a partir de arquivos da Master</li>
+            <li>
+              <b>Gatilho</b> &gt; <b class="green" >sucesso</b> no build da branch Master<br />
+              <b>Feedback</b> &lt; via e-mail em caso de falha no build<br />
+              <b>Strenght:</b> interrompe o Pipeline em caso de falha
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="apDiv" title="code-quality-master" id="apDiv24">
+        <div class="apDivContent" >
+          <h1>code-quality-master</h1>
+          <ul>
+            <li>Verifica a aderência de qualidade do código desenvolvido na Master</li>
+            <li>
+              <b>Gatilho</b> &gt; <b class="green" >Sucesso</b> nos tetes unitários<br />
+              <b>Feedback</b> &lt; via e-mail em caso de não aderências aos padrões de qualidade <br />
+              <b>Strenght:</b> interrompe o Pipeline em caso de falha
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="apDiv" title="dist-master" id="apDiv25">
+        <div class="apDivContent" >
+          <h1>dist-master - Preparando tudo para ir pra produção( De novo )</h1>
+          <ul>
+            <li>
+              Nas etapas anteriores, todos os arquivos da aplicação se mantinham separados e intactos para facilitar debugs em caso de erros.
+              <br /><br />Nessa etapa, preparamos tudo para a aplicação chegar ao ponto ideal de ir para produção, só que dessa vez baseadios os arquivos dqa branch Master.
+            </li>
+            <li>Concatena JavaScripts &gt; Minifica o JavaScript Concatenado </li>
+            <li>Compila os arquivos de SASS &gt; Concatena os arquivos compilados de CSS &gt; Minifica o arquivo concatenado de CSS</li>
+            <li>Parseia as tags de Mustache / Camaleão</li>
+            <li>Renomeia os arquivos JS e CSS finais para evitar cache</li>
+            <li>
+              <b>Gatilho</b> &gt; <b class="green" >sucesso</b> da etapa anterior de code-quality-master<br />
+              <b>Feedback</b> &lt; via e-mail em caso de quebrar algum dos passos<br />
+              <b>Strenght:</b> interrompe o Pipeline em caso de falha
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="apDiv" title="push-camaleão" id="apDiv26">
+        <div class="apDivContent" >
+          <h1>push-camaleão</h1>
+          <ul>
+            <li>Dá push no repositório GIT do Camaleão, disponibilizando a nova versão do Meta-template para suas skin filhas testarem e gerarem novos pacotes.</li>
+            <li>
+              <b>Gatilho</b> &gt; <b class="green" >sucesso</b> da etapa anterior de dist-master<br />
+              <b>Feedback</b> &lt; via e-mail em caso de conflito no GIT<br />
+              <b>Strenght:</b> interrompe o Pipeline em caso de conflito
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="apDiv" title="deploy-qa" id="apDiv27">
+        <div class="apDivContent" >
+          <h1>deploy-qa</h1>
+          <ul>
+            <li>Geração e entrega manual do pacote no ambiente de QA.</li>
+            <li>
+              <b>Gatilho</b> &gt; <b class="green" >geração manual</b> de pacote na ferramenta web do Camaleão e instalação via yum<br />
+              <b>Feedback</b> &lt; não há.<br />
+              <b>Strenght:</b> não há.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="apDiv" title="smoke-teste-qa" id="apDiv28">
+        <div class="apDivContent" >
+          <h1>smoke-teste-qa</h1>
+           <ul>
+            <li>Em construção, será implementado após o surgimento dos primeiros testes integrados de fumaça.</li>
+            <li>
+              <b>Gatilho</b> &gt; <b class="green" >sucesso</b> na entrega na máquina a1-hunf-q-pla1<br />
+              <b>Feedback</b> &lt; via e-mail em caso de quebra nos testes<br />
+              <b>Strenght:</b> interrompe o Pipeline em caso de falha
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="apDiv" title="integration-teste-qa" id="apDiv29">
+        <div class="apDivContent" >
+          <h1>integration-teste-qa</h1>
+          <ul>
+            <li>Em construção, será implementado após o surgimento dos primeiros testes integrados de integração.</li>
+            <li>
+              <b>Gatilho</b> &gt; <b class="green" >sucesso</b> dos teste de fumaça na máquina a1-hunf-q-pla1<br />
+              <b>Feedback</b> &lt; via e-mail em caso de quebra nos testes<br />
+              <b>Strenght:</b> interrompe o Pipeline em caso de falha
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="apDiv" title="deploy-cadf" id="apDiv30">
+        <div class="apDivContent" >
+          <h1>deploy-cadf</h1>
+          <ul>
+            <li>Entrega na máquina dedicada aos testes de stress</li>
+            <li>
+               <b>Gatilho</b> &gt; <b class="green" >sucesso</b> dos teste de integração na máquina a1-hunf-q-pla1<br />
+              <b>Feedback</b> &lt; via e-mail em caso de falha no deploy<br />
+              <b>Strenght:</b> interrompe o Pipeline em caso de falha
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="apDiv" title="stress-test-cadf" id="apDiv31">
+        <div class="apDivContent" >
+          <h1>stress-test-cadf</h1>
+          <ul>
+            <li>Teste de stress simulando multiplas requisições simultâneas na aplicação.</li>
+            <li>
+              <b>Gatilho</b> &gt; <b class="green" >sucesso</b> no deploy na máquina A1-deploy-cadf-s-pla1<br />
+              <b>Feedback</b> &lt; via e-mail em caso de falha no teste de stress<br />
+              <b>Strenght:</b> interrompe o Pipeline em caso de falha
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="apDiv" title="Itil" id="apDiv32">
+        <div class="apDivContent" >
+          <h1>Itil</h1>
+          <ul>
+            <li>Abertura de RFC automática(em construção) e agendamento de entrega manual.</li>
+            <li>
+              <b>Gatilho</b> &gt; processo manual<br />
+              <b>Feedback</b> &lt; não se aplica<br />
+              <b>Strenght:</b> não se aplica
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="apDiv" title="Produção" id="apDiv33">
+        <div class="apDivContent" >
+          <h1>Produção</h1>
+          <ul>
+            <li>Delivery da aplicação de interface, provido pela equipe de AdmCorp, segue os mesmos processos eregras de entrega atuais.</li>
+            <li>
+              <b>Gatilho</b> &gt; processo manual<br />
+              <b>Feedback</b> &lt; não se aplica<br />
+              <b>Strenght:</b> não se aplica
+            </li>
+          </ul>
+        </div>
+      </div>
+
+  </div>
+
+  <div id="mainImage" ><img src="images/camaleaoInfra.png" /></div>
+
+  <div id="overmask" >
+     <div id="overMaskContent" >
+         <div id="overmaskCloseButton" ></div>
+     </div>
+  </div>
+
+</body>
+</html>

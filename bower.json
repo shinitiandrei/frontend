@@ -1,0 +1,26 @@
+{
+  "name": "uolsac",
+  "version": "0.0.1",
+  "dependencies": {
+    "json3": "3.2.6",
+    "es5-shim": "2.1.0",
+    "jquery": "1.10.2",
+    "angular": "1.2.23",
+    "angular-resource": "1.2.6",
+    "angular-cookies": "1.2.6",
+    "angular-sanitize": "1.2.6",
+    "angular-route": "1.2.6",
+    "angular-animate": "1.2.18",
+    "respond": "1.4.2",
+    "angular-loading-bar": "0.3.0",
+    "angular-ui-utils": "~0.1.1",
+    "modernizr": "~2.8.3"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.2.6",
+    "angular-scenario": "1.2.6"
+  },
+  "resolutions": {
+    "angular": "1.2.23"
+  }
+}

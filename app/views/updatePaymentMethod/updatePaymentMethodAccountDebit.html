@@ -1,0 +1,60 @@
+{{=[[ ]]=}}
+<section id="updatePaymentMethodAccountDebit" ng-controller="updatePaymentMethodAccountDebitCtrl">
+	<div class="row">
+        <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+            <strong>Dia do d&eacute;bito</strong>
+        </div>
+    </div>
+
+    <div class="row v-margin-10">
+        <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+            <span>Selecione o dia</span>
+            <div sac-select name="'debitDate'" field="debitDate" optionlist="debitDay" optionname="name" helpblockclass="'col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right'" inputclass="'col-xs-6 col-sm-3 col-md-2 col-lg-2 no-padding-left no-padding-right'"></div>
+        </div>    
+    </div>
+
+    <div class="row">
+        <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24 v-margin-only-bottom-10">
+            <strong>Informa&ccedil;&otilde;es da conta</strong>
+        </div>
+        <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+        	Banco
+            <div sac-select name="'bank'" field="bank" optionlist="banks" optionname="name" helpblockclass="'col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right'" inputclass="'col-xs-24 col-sm-10 col-md-8 col-lg-8 no-padding-left no-padding-right'"></div>
+        </div>
+    </div>
+
+    <div class="row">
+		<div class="col-xs-22 col-sm-7 col-md-6 col-lg-6 v-margin-only-bottom-10">
+            Ag&ecirc;ncia
+            <div class="row">
+                <div sac-multiple-input helpblockclass="'col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right no-margin v-margin-only-top-5'" name="'agency'" field="agency" optionlist="agencyInputs"></div>
+            </div>
+            <span class="small-font">Ex:1234-5</span>
+    	</div>
+    	<div class="col-xs-22 col-sm-11 col-md-8 col-lg-8 v-margin-only-bottom-10">
+            Conta Corrente
+            <div class="row">
+                <div sac-multiple-input helpblockclass="'col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right no-margin v-margin-only-top-5'" name="'currentAccount'" field="currentAccount" optionlist="currentAccountInputs"></div>
+            </div>
+            <div class="row">
+                <span class="small-font">Somente n&uacute;meros</span>
+            </div>
+    	</div>
+    </div>
+
+    <div class="row">
+    	<div class="col-xs-14 col-sm-5 col-md-4 col-lg-5">
+    		CPF do titular
+    		<div sac-input type="'text'" name="'cpf'" field="cpf" helpblockclass="'helpblockWidth col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right'" inputclass="'col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right no-margin-left'" placeholder="'___.___.___-__'" mask="'9?9?9?.9?9?9?.9?9?9?-9?9?'"></div>
+    	</div>
+    </div>
+
+    <div class="row v-margin-10">
+        <div class="col-xs-12 col-sm-5 col-md-4 col-lg-4 v-margin-only-bottom-10">
+            <button type="submit" class="btn btn-primary col-xs-24 col-sm-24 col-md-24 col-lg-24" ng-click="accountInformation.update()" >Alterar</button>
+        </div>
+        <div class="col-xs-12 col-sm-5 col-md-4 col-lg-4">
+            <button type="submit" class="btn btn-default btn-block" >Cancelar</button>
+        </div>
+    </div>
+</section>

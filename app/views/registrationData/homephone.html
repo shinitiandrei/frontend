@@ -1,0 +1,56 @@
+{{=[[ ]]=}}
+<section ng-controller="homephoneCtrl">
+	<!-- Contact Information Homephone Info -->
+	<section id="contactInformationHomephoneInfo" ng-class="{inactive: $parent.hide == 'contactInformationHomephoneInfo'}">
+        <div class="container">
+            <div class="form-group">
+            	<div class="row">
+            		<div class="col-xs-24 col-sm-6 col-md-6 col-lg-6">Telefone residencial</div>
+
+            		<div class="col-xs-24 col-sm-18 col-md-18 col-lg-18" ng-show="$parent.preloader">
+                        <div class="alert alert-sm alert-loader alert-loader-box"></div>
+                    </div>
+
+                    <div class="col-xs-24 col-sm-18 col-md-18 col-lg-18" ng-show="!$parent.preloader">
+                    	<div ng-show="registered">
+                            <strong>{{homephoneLabel}}</strong> - <a href="" ng-click="$parent.show = 'contactInformationHomephoneEdit' ;  $parent.hide='contactInformationHomephoneInfo'">editar</a>
+                        </div>
+                        <div ng-hide="registered">
+                            <div class="alert alert-sm alert-warning">
+                                <p>Nenhum telefone cadastrado - <a href="" ng-click="$parent.show = 'contactInformationHomephoneEdit' ; $parent.hide='contactInformationHomephoneInfo'">cadastrar</a></p>
+                            </div>
+                        </div>
+                    </div>
+            	</div>
+            </div>
+            <hr>
+        </div>
+    </section>
+
+    <!-- Contact Information Cellphone Edit -->
+    <section id="contactInformationHomephoneEdit" ng-class="{active: $parent.show == 'contactInformationHomephoneEdit'}" class="inactive">
+        <div class="container">
+            <div class="form-group">
+                <div class="bgRecoveryBox">
+                    <h5 class="col-xs-24 col-sm-24 col-md-24 col-lg-24">Telefone residencial</h5>
+                    <form ng-submit="homephone.change()">
+                        <div class="row">
+                            <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+                                <div sac-multiple-input helpblockclass="'col-xs-24 col-sm-24 col-md-24 col-lg-24 no-padding-left no-padding-right'" name="'telephoneMultiple'" field="telephoneMultiple" optionlist="telephoneInput"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                        	<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 h-padding-only-right-5">
+                            	<button class="btn btn-block btn-primary">Salvar</button>
+                        	</div>
+                        	<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 h-padding-only-left-5">
+                            	<button class="btn btn-block btn-default" type="button" ng-click="$parent.show = 'contactInformationHomephoneInfo' ;  $parent.hide='contactInformationHomephoneEdit'">Cancelar</button>
+                        	</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
+</section>

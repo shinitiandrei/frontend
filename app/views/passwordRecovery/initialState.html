@@ -1,0 +1,32 @@
+{{=[[ ]]=}}
+<section id="passwordRecovery" ng-class="{ 'no-margin-top v-margin-only-bottom-28' : totalNumberOfMessagesOnDisplay > 0, 'v-margin-28' : totalNumberOfMessagesOnDisplay == 0 }" >
+
+	<div class="container no-padding">
+
+		[[> ../includes/preloader.inc ]]
+
+		<div class="form-group" ng-show="!preloader">
+
+			<h4>Esqueceu sua senha?</h4>
+
+			<form ng-submit="getAvailableRecoveries()" >
+
+				<div class="row">
+
+					<div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+						<div sac-input type="'text'" name="'login'" field="login" control-label="'Digite o e-mail que você utiliza para acessar os produtos do {{brandName}}'" inputclass="'col-xs-24 col-sm-10 col-md-8 col-lg-8 no-padding-left no-padding-right'"  ></div>
+					</div>
+
+					<div id="sac-turing-container" class="fadeSac" ></div>
+
+					<div class="col-xs-24 col-sm-24 col-md-24 col-lg-24" >
+						<button type="submit" id="submitInitialState" formnovalidate click-once click-once-validate="validate" class="btn btn-primary col-xs-24 col-sm-4 col-md-4 col-lg-4" >Continuar</button>
+					</div>
+
+				</div>
+
+			</form>
+
+		</div>
+	</div>
+</section>

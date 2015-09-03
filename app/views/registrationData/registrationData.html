@@ -1,0 +1,75 @@
+{{=[[ ]]=}}
+<section id="registrationData" ng-class="{ 'no-margin-top v-margin-only-bottom-30' : Notify.getAllNotifies().length > 0, 'v-margin' : Notify.getAllNotifies().length == 0 }">
+    <div class="container">
+        <div class="form-group">
+            <h4>Dados cadastrais</h3>
+        </div>
+    </div>
+
+    <!-- Personal Information -->
+    <section id="personalInformation" ng-show="personalType">
+        <div class="container">
+            <div class="form-group">
+                <h5 class="col-xs-24 col-sm-24 col-md-24 col-lg-24 borderTitle yellowTitle">Informa&ccedil;&otilde;es pessoais</h5>
+            </div>
+        </div>
+
+        [[> nameAndCpf.html ]]
+
+        [[> birthDate.html ]]
+
+        [[> gender.html ]]
+
+    </section>
+
+    <!-- Juridical Information -->
+    <section id="juridicalInformation">
+        <div class="container">
+            <div class="form-group">
+                <h5 class="col-xs-24 col-sm-24 col-md-24 col-lg-24 borderTitle yellowTitle">Informa&ccedil;&otilde;es jur&iacute;dicas</h5>
+            </div>
+        </div>
+
+        [[> corporateNameAndCnpj.html ]]
+
+        [[> tradingName.html ]]
+
+        [[> stateTax.html ]]
+
+        [[> foundationDate.html ]]
+
+    </section>
+
+    <!-- Access Information -->
+    <section id="accessInformation">
+        <div class="container">
+            <div class="form-group">
+                <h5 class="col-xs-24 col-sm-24 col-md-24 col-lg-24 borderTitle yellowTitle">Informa&ccedil;&otilde;es de acesso</h5>
+            </div>
+        </div>
+
+        [[> email.html ]]
+
+        [[> socialNetworks.html ]]
+
+    </section>
+
+    <!-- Contact Information -->
+    <section id="contactInformation">
+        <div class="container">
+            <div class="form-group">
+                <h5 class="col-xs-24 col-sm-24 col-md-24 col-lg-24 borderTitle yellowTitle">Informa&ccedil;&otilde;es de contato</h5>
+            </div>
+        </div>
+
+        [[> alternativeEmail.html ]]
+
+        [[> cellphone.html ]]
+
+        [[> homephone.html ]]
+
+        [[> businessphone.html ]]
+
+    </section>
+
+</section>
